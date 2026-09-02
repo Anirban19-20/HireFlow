@@ -1,0 +1,1674 @@
+/* =========================================================
+   CANDIDATE OFFERS
+========================================================= */
+
+.candidate-offers-page {
+    min-height: calc(100vh - 70px);
+
+    padding: 34px 0 70px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #f8fafc 0%,
+            #f4f7fb 100%
+        );
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.candidate-offers-loading {
+    min-height: 65vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    gap: 13px;
+
+    color: #64748b;
+}
+
+.candidate-offers-loading p {
+    margin: 0;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.candidate-offers-header {
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 24px;
+
+    margin-bottom: 24px;
+    padding: 28px 30px;
+
+    border: 1px solid #dbeafe;
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff 0%,
+            #f8fbff 52%,
+            #eff6ff 100%
+        );
+
+    box-shadow:
+        0 14px 40px
+        rgba(15, 23, 42, 0.055);
+}
+
+.candidate-offers-header::after {
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    top: -120px;
+    right: -60px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(37, 99, 235, 0.06);
+
+    pointer-events: none;
+}
+
+.candidate-offers-header > div {
+    position: relative;
+    z-index: 2;
+}
+
+.candidate-offers-eyebrow {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #2563eb;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+}
+
+.candidate-offers-header h1 {
+    margin: 0;
+
+    color: #0f172a;
+
+    font-size: 31px;
+    font-weight: 800;
+
+    letter-spacing: -0.6px;
+}
+
+.candidate-offers-header p {
+    max-width: 690px;
+
+    margin: 7px 0 0;
+
+    color: #64748b;
+
+    font-size: 13px;
+    line-height: 1.65;
+}
+
+.candidate-offers-header-actions {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+}
+
+.candidate-offers-refresh,
+.candidate-offers-browse {
+    min-height: 42px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    padding: 10px 15px;
+
+    border-radius: 11px;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease,
+        background 0.18s ease;
+}
+
+.candidate-offers-refresh {
+    border: 1px solid #dbeafe;
+
+    background: #ffffff;
+
+    color: #2563eb;
+}
+
+.candidate-offers-refresh:hover:not(:disabled) {
+    transform: translateY(-1px);
+
+    background: #eff6ff;
+}
+
+.candidate-offers-refresh:disabled {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+}
+
+.candidate-offers-browse {
+    border: 1px solid #2563eb;
+
+    background: #2563eb;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 8px 19px
+        rgba(37, 99, 235, 0.18);
+}
+
+.candidate-offers-browse:hover {
+    transform: translateY(-2px);
+
+    background: #1d4ed8;
+
+    color: #ffffff;
+}
+
+@keyframes candidateOffersSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.candidate-offers-spin {
+    animation:
+        candidateOffersSpin
+        0.8s
+        linear
+        infinite;
+}
+
+
+/* =========================================================
+   ALERT
+========================================================= */
+
+.candidate-offers-alert {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    margin-bottom: 20px;
+
+    border-radius: 12px;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.candidate-offers-stats {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 15px;
+
+    margin-bottom: 22px;
+}
+
+.candidate-offers-stat-card {
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    min-height: 99px;
+
+    padding: 18px;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 17px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 8px 24px
+        rgba(15, 23, 42, 0.04);
+
+    transition:
+        transform 0.18s ease,
+        border-color 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+.candidate-offers-stat-card:hover {
+    transform: translateY(-3px);
+
+    border-color: #bfdbfe;
+
+    box-shadow:
+        0 13px 30px
+        rgba(15, 23, 42, 0.07);
+}
+
+.candidate-offers-stat-icon {
+    width: 49px;
+    height: 49px;
+
+    min-width: 49px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    font-size: 19px;
+}
+
+.offer-stat-blue {
+    background: #eff6ff;
+    color: #2563eb;
+}
+
+.offer-stat-orange {
+    background: #fff7ed;
+    color: #ea580c;
+}
+
+.offer-stat-green {
+    background: #f0fdf4;
+    color: #16a34a;
+}
+
+.offer-stat-slate {
+    background: #f1f5f9;
+    color: #64748b;
+}
+
+.candidate-offers-stat-card > div:last-child {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.candidate-offers-stat-card span {
+    color: #64748b;
+
+    font-size: 10px;
+    font-weight: 650;
+}
+
+.candidate-offers-stat-card strong {
+    margin: 2px 0;
+
+    color: #0f172a;
+
+    font-size: 25px;
+    font-weight: 800;
+
+    line-height: 1.2;
+}
+
+.candidate-offers-stat-card small {
+    color: #94a3b8;
+
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   TOOLBAR
+========================================================= */
+
+.candidate-offers-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 18px;
+
+    margin-bottom: 20px;
+    padding: 12px 14px;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+
+    background: rgba(255, 255, 255, 0.92);
+}
+
+.candidate-offers-toolbar > div:first-child {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    color: #64748b;
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.candidate-offers-filter-list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 6px;
+}
+
+.candidate-offers-filter-list button {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 5px;
+
+    padding: 7px 10px;
+
+    border: 1px solid transparent;
+    border-radius: 9px;
+
+    background: transparent;
+
+    color: #64748b;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    transition:
+        background 0.18s ease,
+        color 0.18s ease,
+        border-color 0.18s ease;
+}
+
+.candidate-offers-filter-list button:hover {
+    background: #f8fafc;
+
+    color: #1e293b;
+}
+
+.candidate-offers-filter-list button.active {
+    border-color: #bfdbfe;
+
+    background: #eff6ff;
+
+    color: #1d4ed8;
+}
+
+.candidate-offers-filter-list button span {
+    min-width: 18px;
+    height: 18px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 5px;
+
+    border-radius: 20px;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-size: 8px;
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.candidate-offers-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+
+/* =========================================================
+   OFFER CARD
+========================================================= */
+
+.candidate-offer-card {
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 22px;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 19px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 10px 30px
+        rgba(15, 23, 42, 0.045);
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.candidate-offer-card:hover {
+    transform: translateY(-3px);
+
+    border-color: #cbd5e1;
+
+    box-shadow:
+        0 15px 36px
+        rgba(15, 23, 42, 0.075);
+}
+
+.candidate-offer-card-active {
+    border-color: #bfdbfe;
+
+    box-shadow:
+        0 12px 34px
+        rgba(37, 99, 235, 0.08);
+}
+
+.candidate-offer-card-active::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 4px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #2563eb,
+            #60a5fa
+        );
+}
+
+.candidate-offer-card-top {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 19px;
+}
+
+.candidate-offer-company-mark {
+    width: 48px;
+    height: 48px;
+
+    min-width: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #dbeafe,
+            #eff6ff
+        );
+
+    color: #2563eb;
+
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.candidate-offer-heading {
+    min-width: 0;
+
+    flex: 1;
+}
+
+.candidate-offer-heading > span {
+    display: block;
+
+    margin-bottom: 2px;
+
+    color: #2563eb;
+
+    font-size: 8px;
+    font-weight: 800;
+
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+.candidate-offer-heading h3 {
+    overflow: hidden;
+
+    margin: 0;
+
+    color: #172033;
+
+    font-size: 15px;
+    font-weight: 800;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.candidate-offer-heading small {
+    color: #94a3b8;
+
+    font-size: 8px;
+}
+
+.candidate-offer-status {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 5px;
+
+    padding: 6px 9px;
+
+    border-radius: 20px;
+
+    font-size: 8px;
+    font-weight: 800;
+
+    white-space: nowrap;
+}
+
+.candidate-offer-status-sent {
+    background: #fff7ed;
+    color: #c2410c;
+}
+
+.candidate-offer-status-accepted {
+    background: #f0fdf4;
+    color: #15803d;
+}
+
+.candidate-offer-status-rejected {
+    background: #fef2f2;
+    color: #b91c1c;
+}
+
+.candidate-offer-status-expired {
+    background: #fefce8;
+    color: #a16207;
+}
+
+.candidate-offer-status-withdrawn {
+    background: #f1f5f9;
+    color: #64748b;
+}
+
+.candidate-offer-status-default {
+    background: #eff6ff;
+    color: #2563eb;
+}
+
+
+/* =========================================================
+   COMPENSATION
+========================================================= */
+
+.candidate-offer-compensation {
+    margin-bottom: 17px;
+    padding: 16px;
+
+    border: 1px solid #dbeafe;
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f8fbff,
+            #eff6ff
+        );
+}
+
+.candidate-offer-compensation span {
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: #64748b;
+
+    font-size: 9px;
+    font-weight: 650;
+}
+
+.candidate-offer-compensation strong {
+    color: #0f172a;
+
+    font-size: 22px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   DETAILS
+========================================================= */
+
+.candidate-offer-detail-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 10px;
+
+    margin-bottom: 16px;
+}
+
+.candidate-offer-detail {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    min-width: 0;
+
+    padding: 10px;
+
+    border: 1px solid #edf2f7;
+    border-radius: 11px;
+
+    background: #fbfdff;
+}
+
+.candidate-offer-detail > div {
+    width: 34px;
+    height: 34px;
+
+    min-width: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 9px;
+
+    background: #eff6ff;
+
+    color: #2563eb;
+
+    font-size: 13px;
+}
+
+.candidate-offer-detail > span {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.candidate-offer-detail small {
+    color: #94a3b8;
+
+    font-size: 8px;
+}
+
+.candidate-offer-detail strong {
+    overflow: hidden;
+
+    margin-top: 1px;
+
+    color: #334155;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   MESSAGE
+========================================================= */
+
+.candidate-offer-message {
+    display: flex;
+
+    gap: 10px;
+
+    margin-bottom: 16px;
+    padding: 13px;
+
+    border-left: 3px solid #93c5fd;
+    border-radius: 0 11px 11px 0;
+
+    background: #f8fbff;
+}
+
+.candidate-offer-message > div {
+    color: #60a5fa;
+
+    font-size: 17px;
+}
+
+.candidate-offer-message p {
+    margin: 0;
+
+    color: #475569;
+
+    font-size: 10px;
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   OFFER LETTER PANEL
+========================================================= */
+
+.candidate-offer-letter-panel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 13px;
+
+    margin-top: 16px;
+    padding: 13px;
+
+    border: 1px solid #fecaca;
+    border-radius: 13px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fffafa,
+            #fff7f7
+        );
+}
+
+.candidate-offer-letter-panel > div:first-child {
+    min-width: 0;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+}
+
+.candidate-offer-letter-icon {
+    width: 39px;
+    height: 39px;
+
+    min-width: 39px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: #fee2e2;
+
+    color: #dc2626;
+
+    font-size: 16px;
+}
+
+.candidate-offer-letter-panel strong {
+    display: block;
+
+    color: #7f1d1d;
+
+    font-size: 10px;
+    font-weight: 750;
+}
+
+.candidate-offer-letter-panel span {
+    display: block;
+
+    margin-top: 2px;
+
+    color: #9f6a6a;
+
+    font-size: 8px;
+}
+
+.candidate-offer-letter-panel > button {
+    min-height: 36px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+
+    padding: 8px 11px;
+
+    border: 1px solid #fca5a5;
+    border-radius: 9px;
+
+    background: #ffffff;
+
+    color: #b91c1c;
+
+    font-size: 9px;
+    font-weight: 750;
+
+    white-space: nowrap;
+
+    transition:
+        transform 0.18s ease,
+        background 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+.candidate-offer-letter-panel > button:hover:not(:disabled) {
+    transform: translateY(-1px);
+
+    background: #fee2e2;
+
+    box-shadow:
+        0 6px 14px
+        rgba(185, 28, 28, 0.08);
+}
+
+.candidate-offer-letter-panel > button:disabled {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   RESPONSE BOX
+========================================================= */
+
+.candidate-offer-response-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-top: 14px;
+    padding: 14px;
+
+    border: 1px solid #bfdbfe;
+    border-radius: 13px;
+
+    background: #eff6ff;
+}
+
+.candidate-offer-response-box > div:first-child {
+    min-width: 0;
+}
+
+.candidate-offer-response-box strong {
+    display: block;
+
+    color: #1e3a8a;
+
+    font-size: 10px;
+}
+
+.candidate-offer-response-box span {
+    display: block;
+
+    margin-top: 2px;
+
+    color: #64748b;
+
+    font-size: 8px;
+}
+
+.candidate-offer-response-box > div:last-child {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+}
+
+.candidate-offer-reject-button,
+.candidate-offer-accept-button {
+    min-height: 36px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+
+    padding: 8px 12px;
+
+    border-radius: 9px;
+
+    font-size: 9px;
+    font-weight: 750;
+
+    white-space: nowrap;
+
+    transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease,
+        background 0.18s ease;
+}
+
+.candidate-offer-reject-button {
+    border: 1px solid #fecaca;
+
+    background: #ffffff;
+
+    color: #b91c1c;
+}
+
+.candidate-offer-reject-button:hover:not(:disabled) {
+    background: #fef2f2;
+}
+
+.candidate-offer-accept-button {
+    border: 1px solid #16a34a;
+
+    background: #16a34a;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 6px 14px
+        rgba(22, 163, 74, 0.16);
+}
+
+.candidate-offer-accept-button:hover:not(:disabled) {
+    transform: translateY(-1px);
+
+    background: #15803d;
+}
+
+.candidate-offer-reject-button:disabled,
+.candidate-offer-accept-button:disabled {
+    opacity: 0.58;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   EMPTY
+========================================================= */
+
+.candidate-offers-empty {
+    min-height: 330px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    padding: 35px;
+
+    border: 1px dashed #cbd5e1;
+    border-radius: 19px;
+
+    background: #ffffff;
+
+    text-align: center;
+}
+
+.candidate-offers-empty > div {
+    width: 62px;
+    height: 62px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 14px;
+
+    border-radius: 18px;
+
+    background: #eff6ff;
+
+    color: #2563eb;
+
+    font-size: 24px;
+}
+
+.candidate-offers-empty h3 {
+    margin: 0;
+
+    color: #172033;
+
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.candidate-offers-empty p {
+    max-width: 430px;
+
+    margin: 7px 0 16px;
+
+    color: #64748b;
+
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+.candidate-offers-empty-button {
+    padding: 9px 14px;
+
+    border-radius: 9px;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    text-decoration: none;
+}
+
+.candidate-offers-empty-button:hover {
+    background: #1d4ed8;
+
+    color: white;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1200px) {
+
+    .candidate-offers-stats {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 992px) {
+
+    .candidate-offers-grid {
+        grid-template-columns:
+            1fr;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .candidate-offers-page {
+        padding:
+            26px 0 55px;
+    }
+
+    .candidate-offers-header {
+        align-items: flex-start;
+        flex-direction: column;
+
+        padding: 23px;
+    }
+
+    .candidate-offers-header h1 {
+        font-size: 27px;
+    }
+
+    .candidate-offers-header-actions {
+        width: 100%;
+    }
+
+    .candidate-offers-refresh,
+    .candidate-offers-browse {
+        flex: 1;
+    }
+
+    .candidate-offers-toolbar {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .candidate-offer-response-box {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .candidate-offer-response-box > div:last-child {
+        width: 100%;
+    }
+
+    .candidate-offer-reject-button,
+    .candidate-offer-accept-button {
+        flex: 1;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .candidate-offers-stats {
+        grid-template-columns:
+            1fr;
+    }
+
+    .candidate-offers-header {
+        border-radius: 17px;
+
+        padding: 19px;
+    }
+
+    .candidate-offers-header h1 {
+        font-size: 24px;
+    }
+
+    .candidate-offers-header-actions {
+        flex-direction: column;
+    }
+
+    .candidate-offers-refresh,
+    .candidate-offers-browse {
+        width: 100%;
+    }
+
+    .candidate-offer-card {
+        padding: 17px;
+
+        border-radius: 16px;
+    }
+
+    .candidate-offer-card-top {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .candidate-offer-status {
+        margin-left: 60px;
+    }
+
+    .candidate-offer-detail-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+    .candidate-offer-letter-panel {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .candidate-offer-letter-panel > button {
+        width: 100%;
+    }
+
+    .candidate-offer-response-box > div:last-child {
+        flex-direction: column;
+    }
+
+    .candidate-offer-reject-button,
+    .candidate-offer-accept-button {
+        width: 100%;
+    }
+}
+
+
+/* =========================================================
+   ACCEPTED OFFER / HIRING CONFIRMED
+========================================================= */
+
+.candidate-offer-card-accepted {
+    border-color: #bbf7d0;
+    box-shadow: 0 14px 36px rgba(22, 163, 74, 0.08);
+}
+
+.candidate-offer-card-accepted:hover {
+    border-color: #86efac;
+    box-shadow: 0 17px 42px rgba(22, 163, 74, 0.11);
+}
+
+.candidate-offer-hire-confirmed {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 14px;
+    margin: 18px 0;
+    padding: 16px 17px;
+    border: 1px solid #bbf7d0;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%);
+}
+
+.candidate-offer-hire-confirmed-icon {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 13px;
+    background: #dcfce7;
+    color: #16a34a;
+    font-size: 20px;
+}
+
+.candidate-offer-hire-confirmed-copy {
+    min-width: 0;
+}
+
+.candidate-offer-hire-confirmed-copy > span {
+    display: block;
+    color: #15803d;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+.candidate-offer-hire-confirmed-copy > strong {
+    display: block;
+    margin-top: 3px;
+    color: #14532d;
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.candidate-offer-hire-confirmed-copy > p {
+    margin: 5px 0 0;
+    color: #4b5563;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.candidate-offer-hire-confirmed-date {
+    min-width: 138px;
+    padding: 11px 13px;
+    border: 1px solid #dcfce7;
+    border-radius: 11px;
+    background: #ffffff;
+    text-align: right;
+}
+
+.candidate-offer-hire-confirmed-date small {
+    display: block;
+    color: #86a28f;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.candidate-offer-hire-confirmed-date strong {
+    display: block;
+    margin-top: 3px;
+    color: #166534;
+    font-size: 14px;
+}
+
+@media (max-width: 720px) {
+    .candidate-offer-hire-confirmed {
+        grid-template-columns: auto minmax(0, 1fr);
+    }
+
+    .candidate-offer-hire-confirmed-date {
+        grid-column: 1 / -1;
+        width: 100%;
+        text-align: left;
+    }
+}
+
+@media (max-width: 520px) {
+    .candidate-offer-hire-confirmed {
+        grid-template-columns: 1fr;
+        align-items: flex-start;
+    }
+}
+
+/* =========================================================
+   ONBOARDING CTA
+========================================================= */
+
+.candidate-offer-hire-confirmed-actions {
+    min-width: 155px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.candidate-offer-onboarding-link {
+    min-height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 0 11px;
+    border: 1px solid #86efac;
+    border-radius: 9px;
+    background: #ffffff;
+    color: #15803d;
+    font-size: 10px;
+    font-weight: 700;
+    text-decoration: none;
+    transition:
+        background 0.18s ease,
+        border-color 0.18s ease,
+        color 0.18s ease,
+        transform 0.18s ease;
+}
+
+.candidate-offer-onboarding-link:hover {
+    transform: translateY(-1px);
+    border-color: #4ade80;
+    background: #dcfce7;
+    color: #166534;
+}
+
+@media (max-width: 720px) {
+    .candidate-offer-hire-confirmed-actions {
+        grid-column: 1 / -1;
+        width: 100%;
+    }
+
+    .candidate-offer-hire-confirmed-actions
+    .candidate-offer-hire-confirmed-date {
+        width: 100%;
+        text-align: left;
+    }
+
+    .candidate-offer-onboarding-link {
+        width: 100%;
+    }
+}
+
+@media (max-width: 520px) {
+    .candidate-offer-hire-confirmed-actions {
+        grid-column: auto;
+    }
+}
+/* =========================================================
+   CANDIDATE OFFERS - FONT SIZE IMPROVEMENT
+========================================================= */
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.candidate-offers-eyebrow {
+    font-size: 12px;
+}
+
+.candidate-offers-header p {
+    font-size: 15px;
+}
+
+.candidate-offers-refresh,
+.candidate-offers-browse {
+    font-size: 13px;
+}
+
+.candidate-offers-alert {
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   STAT CARDS
+========================================================= */
+
+.candidate-offers-stat-card span {
+    font-size: 12px;
+}
+
+.candidate-offers-stat-card strong {
+    font-size: 27px;
+}
+
+.candidate-offers-stat-card small {
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   TOOLBAR
+========================================================= */
+
+.candidate-offers-toolbar > div:first-child {
+    font-size: 12px;
+}
+
+.candidate-offers-filter-list button {
+    font-size: 11px;
+}
+
+.candidate-offers-filter-list button span {
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   OFFER CARD HEADER
+========================================================= */
+
+.candidate-offer-heading > span {
+    font-size: 10px;
+}
+
+.candidate-offer-heading h3 {
+    font-size: 17px;
+}
+
+.candidate-offer-heading small {
+    font-size: 10px;
+}
+
+.candidate-offer-status {
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   COMPENSATION
+========================================================= */
+
+.candidate-offer-compensation span {
+    font-size: 11px;
+}
+
+.candidate-offer-compensation strong {
+    font-size: 24px;
+}
+
+
+/* =========================================================
+   OFFER DETAILS
+========================================================= */
+
+.candidate-offer-detail small {
+    font-size: 10px;
+}
+
+.candidate-offer-detail strong {
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   MESSAGE
+========================================================= */
+
+.candidate-offer-message p {
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   OFFER LETTER PANEL
+========================================================= */
+
+.candidate-offer-letter-panel strong {
+    font-size: 12px;
+}
+
+.candidate-offer-letter-panel span {
+    font-size: 10px;
+}
+
+.candidate-offer-letter-panel > button {
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   RESPONSE BOX
+========================================================= */
+
+.candidate-offer-response-box strong {
+    font-size: 12px;
+}
+
+.candidate-offer-response-box span {
+    font-size: 10px;
+}
+
+.candidate-offer-reject-button,
+.candidate-offer-accept-button {
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.candidate-offers-empty h3 {
+    font-size: 19px;
+}
+
+.candidate-offers-empty p {
+    font-size: 13px;
+}
+
+.candidate-offers-empty-button {
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   ACCEPTED OFFER / HIRING CONFIRMED
+========================================================= */
+
+.candidate-offer-hire-confirmed-copy > span {
+    font-size: 12px;
+}
+
+.candidate-offer-hire-confirmed-copy > strong {
+    font-size: 17px;
+}
+
+.candidate-offer-hire-confirmed-copy > p {
+    font-size: 14px;
+}
+
+.candidate-offer-hire-confirmed-date small {
+    font-size: 11px;
+}
+
+.candidate-offer-hire-confirmed-date strong {
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   ONBOARDING BUTTON
+========================================================= */
+
+.candidate-offer-onboarding-link {
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .candidate-offers-header p {
+        font-size: 14px;
+    }
+
+    .candidate-offer-heading h3 {
+        font-size: 16px;
+    }
+
+    .candidate-offer-compensation strong {
+        font-size: 22px;
+    }
+
+    .candidate-offer-message p {
+        font-size: 11px;
+    }
+
+    .candidate-offer-hire-confirmed-copy > strong {
+        font-size: 16px;
+    }
+
+    .candidate-offer-hire-confirmed-copy > p {
+        font-size: 13px;
+    }
+}
+
+
+@media (max-width: 576px) {
+
+    .candidate-offer-status {
+        font-size: 9px;
+    }
+
+    .candidate-offer-detail strong {
+        font-size: 10px;
+    }
+
+    .candidate-offer-letter-panel strong {
+        font-size: 11px;
+    }
+
+    .candidate-offer-response-box strong {
+        font-size: 11px;
+    }
+}

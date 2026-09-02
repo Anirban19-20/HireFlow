@@ -1,0 +1,311 @@
+/* ========================================
+   EDIT JOB
+======================================== */
+
+.edit-job-header-right {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+}
+
+
+/* STATUS */
+
+.edit-job-status {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 7px 11px;
+
+    border-radius: 20px;
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.edit-job-status > span {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: currentColor;
+}
+
+.edit-job-open {
+    background: #f0fdf4;
+
+    color: #16a34a;
+}
+
+.edit-job-closed {
+    background: #f1f5f9;
+
+    color: #64748b;
+}
+
+.edit-job-expired {
+    background: #fff7ed;
+
+    color: #ea580c;
+}
+
+
+/* ========================================
+   PREVIEW
+======================================== */
+
+.edit-job-preview {
+    margin-bottom: 20px;
+}
+
+
+/* ========================================
+   INFO CARD
+======================================== */
+
+.edit-job-info-card {
+    padding: 24px;
+
+    border-radius: 17px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #172554,
+            #1d4ed8
+        );
+
+    color: white;
+
+    box-shadow:
+        0 12px 30px
+        rgba(29, 78, 216, 0.2);
+}
+
+.edit-job-info-icon {
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 16px;
+
+    border-radius: 12px;
+
+    background:
+        rgba(255, 255, 255, 0.14);
+
+    font-size: 17px;
+}
+
+.edit-job-info-card h4 {
+    margin-bottom: 7px;
+
+    font-size: 16px;
+
+    font-weight: 700;
+}
+
+.edit-job-info-card > p {
+    margin-bottom: 19px;
+
+    color:
+        rgba(255, 255, 255, 0.7);
+
+    font-size: 10px;
+
+    line-height: 1.7;
+}
+
+.edit-job-info-item {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 8px;
+
+    margin-bottom: 12px;
+
+    color:
+        rgba(255, 255, 255, 0.82);
+
+    font-size: 10px;
+
+    line-height: 1.5;
+}
+
+.edit-job-info-item i {
+    margin-top: 2px;
+
+    color: #86efac;
+}
+
+
+/* ========================================
+   LOADING
+======================================== */
+
+.edit-job-loading {
+    min-height: calc(100vh - 72px);
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #f6f8fc;
+
+    color: #64748b;
+}
+
+.edit-job-loading p {
+    margin-top: 14px;
+}
+
+
+/* ========================================
+   ERROR
+======================================== */
+
+.edit-job-error-page {
+    min-height: calc(100vh - 72px);
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    background: #f6f8fc;
+
+    text-align: center;
+}
+
+.edit-job-error-icon {
+    width: 70px;
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 17px;
+
+    border-radius: 50%;
+
+    background: #fee2e2;
+
+    color: #dc2626;
+
+    font-size: 27px;
+}
+
+.edit-job-error-page h3 {
+    color: #334155;
+}
+
+.edit-job-error-page p {
+    max-width: 450px;
+
+    margin-bottom: 20px;
+
+    color: #64748b;
+
+    font-size: 12px;
+}
+
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 768px) {
+
+    .edit-job-header-right {
+        display: none;
+    }
+}
+/* =========================================================
+   EDIT JOB - FONT SIZE IMPROVEMENT
+========================================================= */
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.edit-job-status {
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   INFO CARD
+========================================================= */
+
+.edit-job-info-card h4 {
+    font-size: 18px;
+}
+
+.edit-job-info-card > p {
+    font-size: 12px;
+}
+
+.edit-job-info-item {
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.edit-job-loading p {
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.edit-job-error-page h3 {
+    font-size: 20px;
+}
+
+.edit-job-error-page p {
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .edit-job-status {
+        font-size: 11px;
+    }
+
+    .edit-job-info-card h4 {
+        font-size: 17px;
+    }
+
+    .edit-job-info-card > p,
+    .edit-job-info-item {
+        font-size: 11px;
+    }
+
+    .edit-job-error-page p {
+        font-size: 13px;
+    }
+}

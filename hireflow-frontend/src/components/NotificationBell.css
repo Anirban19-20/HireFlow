@@ -1,0 +1,899 @@
+.hireflow-notification-wrapper {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+}
+
+
+/* =====================================================
+   BELL
+===================================================== */
+
+.hireflow-notification-bell {
+    position: relative;
+
+    width: 39px;
+    height: 39px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    color: #64748b;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.hireflow-notification-bell:hover,
+.hireflow-notification-bell.active {
+    border-color: #bfdbfe;
+
+    background: #eff6ff;
+
+    color: #2563eb;
+}
+
+
+/* =====================================================
+   COUNT BADGE
+===================================================== */
+
+.hireflow-notification-count {
+    position: absolute;
+
+    top: -6px;
+    right: -7px;
+
+    min-width: 18px;
+    height: 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 5px;
+
+    border: 2px solid white;
+    border-radius: 20px;
+
+    background: #dc2626;
+
+    color: white;
+
+    font-size: 8px;
+    font-weight: 700;
+
+    line-height: 1;
+}
+
+
+/* =====================================================
+   DROPDOWN
+===================================================== */
+
+.hireflow-notification-dropdown {
+    position: absolute;
+
+    top: calc(100% + 12px);
+    right: 0;
+
+    z-index: 5000;
+
+    width: 380px;
+
+    overflow: hidden;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 15px;
+
+    background: white;
+
+    box-shadow:
+        0 20px 50px
+        rgba(15, 23, 42, 0.15);
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.hireflow-notification-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding: 17px 18px;
+
+    border-bottom: 1px solid #edf2f7;
+}
+
+.hireflow-notification-header > div > span {
+    color: #1e293b;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.hireflow-notification-header p {
+    margin: 2px 0 0;
+
+    color: #94a3b8;
+
+    font-size: 8px;
+}
+
+.hireflow-notification-header button {
+    padding: 0;
+
+    border: none;
+
+    background: transparent;
+
+    color: #2563eb;
+
+    font-size: 8px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   BODY
+===================================================== */
+
+.hireflow-notification-body {
+    max-height: 410px;
+
+    overflow-y: auto;
+}
+
+
+/* =====================================================
+   NOTIFICATION ITEM
+===================================================== */
+
+.hireflow-notification-item {
+    position: relative;
+
+    width: 100%;
+
+    display: flex;
+
+    gap: 11px;
+
+    padding: 14px 17px;
+
+    border: none;
+    border-bottom: 1px solid #f1f5f9;
+
+    background: white;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.hireflow-notification-item:hover {
+    background: #f8fafc;
+}
+
+.hireflow-notification-item.unread {
+    background: #f8fbff;
+}
+
+.hireflow-notification-item.unread:hover {
+    background: #eff6ff;
+}
+
+
+/* =====================================================
+   ICON
+===================================================== */
+
+.hireflow-notification-icon {
+    width: 37px;
+    height: 37px;
+
+    min-width: 37px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: #eff6ff;
+
+    color: #2563eb;
+
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.hireflow-notification-content {
+    flex: 1;
+
+    min-width: 0;
+}
+
+.hireflow-notification-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 8px;
+}
+
+.hireflow-notification-title strong {
+    color: #334155;
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.hireflow-notification-title > span {
+    width: 7px;
+    height: 7px;
+
+    min-width: 7px;
+
+    border-radius: 50%;
+
+    background: #2563eb;
+}
+
+.hireflow-notification-content p {
+    margin: 4px 0 5px;
+
+    color: #64748b;
+
+    font-size: 9px;
+
+    line-height: 1.55;
+}
+
+.hireflow-notification-content small {
+    color: #94a3b8;
+
+    font-size: 7px;
+}
+
+
+/* =====================================================
+   EMPTY
+===================================================== */
+
+.hireflow-notification-empty {
+    min-height: 210px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+
+    text-align: center;
+}
+
+.hireflow-notification-empty > div {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 11px;
+
+    border-radius: 50%;
+
+    background: #eff6ff;
+
+    color: #2563eb;
+
+    font-size: 18px;
+}
+
+.hireflow-notification-empty h6 {
+    margin-bottom: 4px;
+
+    color: #475569;
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.hireflow-notification-empty p {
+    margin: 0;
+
+    color: #94a3b8;
+
+    font-size: 8px;
+}
+
+
+/* =====================================================
+   LOADING / ERROR
+===================================================== */
+
+.hireflow-notification-loading,
+.hireflow-notification-error {
+    min-height: 150px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 20px;
+
+    color: #64748b;
+
+    font-size: 9px;
+}
+
+.hireflow-notification-error {
+    color: #dc2626;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.hireflow-notification-footer {
+    padding: 11px 16px;
+
+    border-top: 1px solid #edf2f7;
+
+    background: #f8fafc;
+}
+
+.hireflow-notification-footer button {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+
+    padding: 6px;
+
+    border: none;
+
+    background: transparent;
+
+    color: #2563eb;
+
+    font-size: 9px;
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 500px) {
+
+    .hireflow-notification-dropdown {
+        position: fixed;
+
+        top: 72px;
+        left: 10px;
+        right: 10px;
+
+        width: auto;
+
+        max-height:
+            calc(100vh - 90px);
+    }
+
+    .hireflow-notification-body {
+        max-height:
+            calc(100vh - 220px);
+    }
+}
+/* =====================================================
+   NOTIFICATION META
+===================================================== */
+
+.hireflow-notification-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 10px;
+
+    margin-top: 5px;
+}
+
+.hireflow-notification-meta small {
+    color: #94a3b8;
+
+    font-size: 7px;
+}
+
+.hireflow-notification-meta small:first-child {
+    padding: 2px 6px;
+
+    border-radius: 10px;
+
+    background: #f1f5f9;
+
+    color: #64748b;
+
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.3px;
+}
+.hireflow-notification-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+
+/* =====================================================
+   BELL
+===================================================== */
+
+.hireflow-notification-bell {
+    position: relative;
+
+    width: 39px;
+    height: 39px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+
+    background: #ffffff;
+    color: #64748b;
+
+    font-size: 16px;
+
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.hireflow-notification-bell:hover,
+.hireflow-notification-bell.active {
+    border-color: #bfdbfe;
+    background: #eff6ff;
+    color: #2563eb;
+}
+
+
+/* =====================================================
+   COUNT BADGE
+===================================================== */
+
+.hireflow-notification-count {
+    position: absolute;
+
+    top: -6px;
+    right: -7px;
+
+    min-width: 19px;
+    height: 19px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 5px;
+
+    border: 2px solid white;
+    border-radius: 20px;
+
+    background: #dc2626;
+    color: white;
+
+    font-size: 9px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+
+/* =====================================================
+   DROPDOWN
+===================================================== */
+
+.hireflow-notification-dropdown {
+    position: absolute;
+
+    top: calc(100% + 12px);
+    right: 0;
+
+    z-index: 5000;
+
+    width: 380px;
+
+    overflow: hidden;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 15px;
+
+    background: white;
+
+    box-shadow:
+        0 20px 50px
+        rgba(15, 23, 42, 0.15);
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.hireflow-notification-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding: 17px 18px;
+
+    border-bottom: 1px solid #edf2f7;
+}
+
+.hireflow-notification-header > div > span {
+    color: #1e293b;
+
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.hireflow-notification-header p {
+    margin: 3px 0 0;
+
+    color: #94a3b8;
+
+    font-size: 10px;
+}
+
+.hireflow-notification-header button {
+    padding: 0;
+
+    border: none;
+
+    background: transparent;
+    color: #2563eb;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   BODY
+===================================================== */
+
+.hireflow-notification-body {
+    max-height: 410px;
+    overflow-y: auto;
+}
+
+
+/* =====================================================
+   NOTIFICATION ITEM
+===================================================== */
+
+.hireflow-notification-item {
+    position: relative;
+
+    width: 100%;
+
+    display: flex;
+
+    gap: 11px;
+
+    padding: 14px 17px;
+
+    border: none;
+    border-bottom: 1px solid #f1f5f9;
+
+    background: white;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.hireflow-notification-item:hover {
+    background: #f8fafc;
+}
+
+.hireflow-notification-item.unread {
+    background: #f8fbff;
+}
+
+.hireflow-notification-item.unread:hover {
+    background: #eff6ff;
+}
+
+
+/* =====================================================
+   ICON
+===================================================== */
+
+.hireflow-notification-icon {
+    width: 37px;
+    height: 37px;
+
+    min-width: 37px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: #eff6ff;
+    color: #2563eb;
+
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.hireflow-notification-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.hireflow-notification-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 8px;
+}
+
+.hireflow-notification-title strong {
+    color: #334155;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.hireflow-notification-title > span {
+    width: 7px;
+    height: 7px;
+
+    min-width: 7px;
+
+    border-radius: 50%;
+
+    background: #2563eb;
+}
+
+.hireflow-notification-content p {
+    margin: 5px 0 6px;
+
+    color: #64748b;
+
+    font-size: 11px;
+    line-height: 1.55;
+}
+
+.hireflow-notification-content small {
+    color: #94a3b8;
+
+    font-size: 9px;
+}
+
+
+/* =====================================================
+   EMPTY
+===================================================== */
+
+.hireflow-notification-empty {
+    min-height: 210px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+
+    text-align: center;
+}
+
+.hireflow-notification-empty > div {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 11px;
+
+    border-radius: 50%;
+
+    background: #eff6ff;
+    color: #2563eb;
+
+    font-size: 20px;
+}
+
+.hireflow-notification-empty h6 {
+    margin-bottom: 4px;
+
+    color: #475569;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.hireflow-notification-empty p {
+    margin: 0;
+
+    color: #94a3b8;
+
+    font-size: 10px;
+}
+
+
+/* =====================================================
+   LOADING / ERROR
+===================================================== */
+
+.hireflow-notification-loading,
+.hireflow-notification-error {
+    min-height: 150px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 20px;
+
+    color: #64748b;
+
+    font-size: 11px;
+}
+
+.hireflow-notification-error {
+    color: #dc2626;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.hireflow-notification-footer {
+    padding: 11px 16px;
+
+    border-top: 1px solid #edf2f7;
+
+    background: #f8fafc;
+}
+
+.hireflow-notification-footer button {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+
+    padding: 6px;
+
+    border: none;
+
+    background: transparent;
+    color: #2563eb;
+
+    font-size: 11px;
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 500px) {
+
+    .hireflow-notification-dropdown {
+        position: fixed;
+
+        top: 72px;
+        left: 10px;
+        right: 10px;
+
+        width: auto;
+
+        max-height:
+            calc(100vh - 90px);
+    }
+
+    .hireflow-notification-body {
+        max-height:
+            calc(100vh - 220px);
+    }
+}
+
+
+/* =====================================================
+   NOTIFICATION META
+===================================================== */
+
+.hireflow-notification-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 10px;
+
+    margin-top: 5px;
+}
+
+.hireflow-notification-meta small {
+    color: #94a3b8;
+
+    font-size: 9px;
+}
+
+.hireflow-notification-meta small:first-child {
+    padding: 2px 6px;
+
+    border-radius: 10px;
+
+    background: #f1f5f9;
+    color: #64748b;
+
+    font-weight: 600;
+
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}

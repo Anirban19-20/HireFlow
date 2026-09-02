@@ -1,0 +1,960 @@
+.candidate-profile-page {
+    min-height: calc(100vh - 72px);
+    padding: 42px 0 65px;
+    background: #f6f8fc;
+}
+
+
+/* HEADER */
+
+.candidate-profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 28px;
+}
+
+.profile-eyebrow {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #2563eb;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+}
+
+.candidate-profile-header h1 {
+    margin-bottom: 7px;
+
+    color: #172033;
+
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.candidate-profile-header p {
+    max-width: 620px;
+
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 14px;
+}
+
+.profile-header-icon {
+    width: 62px;
+    height: 62px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 17px;
+
+    background: #dbeafe;
+
+    color: #2563eb;
+
+    font-size: 25px;
+}
+
+
+/* SUMMARY */
+
+.profile-summary-card,
+.profile-completion-card,
+.profile-form-card {
+    background: white;
+
+    border: 1px solid #e7ecf3;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 7px 25px
+        rgba(15, 23, 42, 0.04);
+}
+
+.profile-summary-card {
+    padding: 27px;
+
+    text-align: center;
+}
+
+.profile-avatar-large {
+    width: 82px;
+    height: 82px;
+
+    margin: 0 auto 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #dbeafe,
+            #bfdbfe
+        );
+
+    color: #1d4ed8;
+
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.profile-summary-card h3 {
+    margin-bottom: 4px;
+
+    color: #1e293b;
+
+    font-size: 20px;
+
+    font-weight: 700;
+}
+
+.profile-email {
+    margin: 0;
+
+    color: #94a3b8;
+
+    font-size: 12px;
+}
+
+.profile-summary-divider {
+    height: 1px;
+
+    margin: 22px 0;
+
+    background: #edf2f7;
+}
+
+.profile-summary-row {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 17px;
+
+    text-align: left;
+}
+
+.profile-summary-row > i {
+    width: 37px;
+    height: 37px;
+
+    min-width: 37px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 9px;
+
+    background: #eff6ff;
+
+    color: #2563eb;
+}
+
+.profile-summary-row > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-summary-row span {
+    color: #94a3b8;
+
+    font-size: 9px;
+
+    text-transform: uppercase;
+}
+
+.profile-summary-row strong {
+    color: #475569;
+
+    font-size: 12px;
+}
+
+.profile-resume-active {
+    color: #16a34a !important;
+}
+
+
+/* CHECKLIST */
+
+.profile-completion-card {
+    margin-top: 20px;
+
+    padding: 22px;
+}
+
+.profile-completion-card h5 {
+    margin-bottom: 17px;
+
+    color: #334155;
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+.profile-check-item {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    margin-bottom: 12px;
+
+    color: #64748b;
+
+    font-size: 12px;
+}
+
+.profile-check-item i {
+    color: #22c55e;
+}
+
+
+/* FORM */
+
+.profile-form-card {
+    padding: 28px;
+
+    margin-bottom: 22px;
+}
+
+.profile-section-heading {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 25px;
+}
+
+.profile-section-icon {
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 11px;
+
+    background: #eff6ff;
+
+    color: #2563eb;
+
+    font-size: 17px;
+}
+
+.profile-section-heading h4 {
+    margin: 0 0 3px;
+
+    color: #1e293b;
+
+    font-size: 16px;
+
+    font-weight: 700;
+}
+
+.profile-section-heading p {
+    margin: 0;
+
+    color: #94a3b8;
+
+    font-size: 11px;
+}
+
+.profile-label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #475569;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+.profile-input-wrapper {
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 0 14px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 9px;
+}
+
+.profile-input-wrapper:focus-within {
+    border-color: #3b82f6;
+
+    background: white;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(59, 130, 246, 0.08);
+}
+
+.profile-input-wrapper i {
+    color: #94a3b8;
+}
+
+.profile-input-wrapper input {
+    width: 100%;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: #475569;
+
+    font-size: 13px;
+}
+
+.profile-textarea {
+    width: 100%;
+
+    padding: 13px;
+
+    resize: vertical;
+
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 9px;
+
+    outline: none;
+
+    color: #475569;
+
+    font-size: 13px;
+}
+
+.profile-textarea:focus {
+    border-color: #3b82f6;
+
+    background: white;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(59, 130, 246, 0.08);
+}
+
+.profile-help-text {
+    display: block;
+
+    margin-top: 5px;
+
+    color: #94a3b8;
+
+    font-size: 10px;
+}
+
+.profile-form-actions {
+    display: flex;
+    justify-content: flex-end;
+
+    margin-top: 23px;
+}
+
+.profile-save-button {
+    padding: 10px 21px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #1d4ed8
+        );
+
+    color: white;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+.profile-save-button:hover {
+    color: white;
+
+    box-shadow:
+        0 7px 18px
+        rgba(37, 99, 235, 0.25);
+}
+
+
+/* CREATE INFO */
+
+.profile-create-info {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 9px;
+
+    margin-bottom: 20px;
+
+    padding: 12px;
+
+    background: #eff6ff;
+
+    border-radius: 9px;
+
+    color: #1d4ed8;
+
+    font-size: 11px;
+}
+
+
+/* RESUME */
+
+.resume-section-icon {
+    background: #fef2f2;
+
+    color: #dc2626;
+}
+
+.current-resume-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+
+    padding: 15px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 11px;
+}
+
+.current-resume-left {
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+}
+
+.pdf-file-icon {
+    width: 43px;
+    height: 43px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: #fee2e2;
+
+    color: #dc2626;
+
+    font-size: 18px;
+}
+
+.current-resume-left > div:last-child {
+    display: flex;
+    flex-direction: column;
+}
+
+.current-resume-left strong {
+    color: #334155;
+
+    font-size: 12px;
+}
+
+.current-resume-left span {
+    color: #94a3b8;
+
+    font-size: 10px;
+}
+
+.current-resume-actions {
+    display: flex;
+
+    gap: 8px;
+}
+
+.resume-view-button {
+    border: 1px solid #bfdbfe;
+
+    background: #eff6ff;
+
+    color: #2563eb;
+
+    font-size: 11px;
+
+    font-weight: 600;
+}
+
+.resume-delete-button {
+    border: 1px solid #fecdd3;
+
+    background: #fff1f2;
+
+    color: #e11d48;
+
+    font-size: 11px;
+
+    font-weight: 600;
+}
+
+.no-resume-message {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 20px;
+
+    padding: 15px;
+
+    border-radius: 10px;
+
+    background: #fff7ed;
+
+    color: #ea580c;
+}
+
+.no-resume-message > i {
+    font-size: 20px;
+}
+
+.no-resume-message div {
+    display: flex;
+    flex-direction: column;
+}
+
+.no-resume-message strong {
+    font-size: 12px;
+}
+
+.no-resume-message span {
+    color: #64748b;
+
+    font-size: 10px;
+}
+
+
+/* UPLOAD */
+
+.resume-upload-area {
+    padding: 21px;
+
+    text-align: center;
+
+    border: 2px dashed #dbe3ee;
+
+    border-radius: 13px;
+
+    background: #fafcff;
+}
+
+.resume-upload-label {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 9px 15px;
+
+    border-radius: 8px;
+
+    background: #eff6ff;
+
+    color: #2563eb;
+
+    cursor: pointer;
+
+    font-size: 11px;
+
+    font-weight: 600;
+}
+
+.resume-upload-label:hover {
+    background: #dbeafe;
+}
+
+.selected-resume-file {
+    max-width: 350px;
+
+    margin: 15px auto;
+
+    padding: 11px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    text-align: left;
+
+    background: white;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 9px;
+}
+
+.selected-resume-file > i {
+    color: #dc2626;
+
+    font-size: 19px;
+}
+
+.selected-resume-file div {
+    display: flex;
+    flex-direction: column;
+}
+
+.selected-resume-file strong {
+    color: #475569;
+
+    font-size: 11px;
+}
+
+.selected-resume-file span {
+    color: #94a3b8;
+
+    font-size: 9px;
+}
+
+.resume-upload-button {
+    margin-top: 14px;
+
+    padding: 9px 17px;
+
+    border: none;
+
+    background: #2563eb;
+
+    color: white;
+
+    border-radius: 8px;
+
+    font-size: 11px;
+
+    font-weight: 600;
+}
+
+.resume-upload-button:hover {
+    background: #1d4ed8;
+
+    color: white;
+}
+
+.resume-upload-note {
+    margin: 12px 0 0;
+
+    color: #94a3b8;
+
+    font-size: 9px;
+}
+
+.resume-upload-note i {
+    margin-right: 5px;
+
+    color: #22c55e;
+}
+
+
+/* OTHER */
+
+.profile-alert {
+    border: none;
+
+    border-radius: 10px;
+
+    font-size: 12px;
+}
+
+.candidate-profile-loading {
+    min-height: calc(100vh - 72px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background: #f6f8fc;
+
+    color: #64748b;
+}
+
+.candidate-profile-loading p {
+    margin-top: 14px;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+
+    .candidate-profile-header h1 {
+        font-size: 26px;
+    }
+
+    .profile-header-icon {
+        display: none;
+    }
+
+    .profile-form-card {
+        padding: 20px;
+    }
+
+    .current-resume-card {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .current-resume-actions {
+        width: 100%;
+    }
+
+    .current-resume-actions a,
+    .current-resume-actions button {
+        flex: 1;
+    }
+
+    .profile-form-actions {
+        display: block;
+    }
+
+    .profile-save-button {
+        width: 100%;
+    }
+}
+/* =====================================================
+   CANDIDATE PROFILE - FONT SIZE IMPROVEMENT
+===================================================== */
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.profile-eyebrow {
+    font-size: 13px;
+}
+
+.candidate-profile-header p {
+    font-size: 15px;
+}
+
+
+/* =====================================================
+   PROFILE SUMMARY
+===================================================== */
+
+.profile-summary-card h3 {
+    font-size: 22px;
+}
+
+.profile-email {
+    font-size: 14px;
+}
+
+.profile-summary-row span {
+    font-size: 11px;
+}
+
+.profile-summary-row strong {
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   PROFILE COMPLETION
+===================================================== */
+
+.profile-completion-card h5 {
+    font-size: 16px;
+}
+
+.profile-check-item {
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   FORM SECTION
+===================================================== */
+
+.profile-section-heading h4 {
+    font-size: 18px;
+}
+
+.profile-section-heading p {
+    font-size: 13px;
+}
+
+.profile-label {
+    font-size: 14px;
+}
+
+.profile-input-wrapper input {
+    font-size: 14px;
+}
+
+.profile-textarea {
+    font-size: 14px;
+}
+
+.profile-help-text {
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   SAVE BUTTON
+===================================================== */
+
+.profile-save-button {
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   CREATE PROFILE INFO
+===================================================== */
+
+.profile-create-info {
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   CURRENT RESUME
+===================================================== */
+
+.current-resume-left strong {
+    font-size: 14px;
+}
+
+.current-resume-left span {
+    font-size: 12px;
+}
+
+.resume-view-button,
+.resume-delete-button {
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   NO RESUME MESSAGE
+===================================================== */
+
+.no-resume-message strong {
+    font-size: 14px;
+}
+
+.no-resume-message span {
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   RESUME UPLOAD
+===================================================== */
+
+.resume-upload-label {
+    font-size: 13px;
+}
+
+.selected-resume-file strong {
+    font-size: 13px;
+}
+
+.selected-resume-file span {
+    font-size: 11px;
+}
+
+.resume-upload-button {
+    font-size: 13px;
+}
+
+.resume-upload-note {
+    font-size: 11px;
+}
+
+
+/* =====================================================
+   ALERTS / LOADING
+===================================================== */
+
+.profile-alert {
+    font-size: 13px;
+}
+
+.candidate-profile-loading p {
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .candidate-profile-header p {
+        font-size: 14px;
+    }
+
+    .profile-summary-card h3 {
+        font-size: 20px;
+    }
+
+    .profile-section-heading h4 {
+        font-size: 17px;
+    }
+
+    .profile-label {
+        font-size: 13px;
+    }
+
+    .profile-input-wrapper input,
+    .profile-textarea {
+        font-size: 13px;
+    }
+
+    .current-resume-left strong {
+        font-size: 13px;
+    }
+}

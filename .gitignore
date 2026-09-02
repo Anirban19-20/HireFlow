@@ -1,0 +1,49 @@
+# ==============================
+# SPRING BOOT / JAVA
+# ==============================
+
+**/target/
+*.class
+*.jar
+*.war
+*.log
+
+# STS / Eclipse
+**/.classpath
+**/.project
+**/.settings/
+
+# IntelliJ
+**/.idea/
+*.iml
+
+# VS Code
+**/.vscode/
+
+
+# ==============================
+# REACT
+# ==============================
+
+**/node_modules/
+**/build/
+
+.env
+.env.*
+**/.env
+**/.env.*
+
+
+# ==============================
+# SYSTEM FILES
+# ==============================
+
+.DS_Store
+Thumbs.db
+
+
+# ==============================
+# LOCAL / SECRET CONFIG
+# ==============================
+
+application-local.properties

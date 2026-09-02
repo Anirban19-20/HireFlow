@@ -1,0 +1,1800 @@
+/* =========================================================
+   HIREFLOW ADMIN MODULE
+   Shared by:
+   AdminDashboard, AdminUsers, AdminJobs,
+   AdminApplications, AdminRecruiters, AdminCandidates
+========================================================= */
+
+.admin-page {
+    min-height: calc(100vh - 70px);
+    padding: 38px 0 70px;
+    background:
+        linear-gradient(
+            180deg,
+            #f7f9fc 0%,
+            #f4f7fb 100%
+        );
+}
+
+.admin-loading-screen {
+    min-height: calc(100vh - 70px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    background: #f6f8fc;
+    color: #64748b;
+}
+
+.admin-loading-screen p {
+    margin: 0;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.admin-page-header {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+    margin-bottom: 26px;
+    padding: 28px 30px;
+    border: 1px solid #dce6f4;
+    border-radius: 20px;
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff 0%,
+            #f8fbff 55%,
+            #eef5ff 100%
+        );
+    box-shadow:
+        0 12px 35px rgba(15, 23, 42, 0.05);
+}
+
+.admin-page-header::after {
+    content: "";
+    position: absolute;
+    top: -115px;
+    right: -60px;
+    width: 235px;
+    height: 235px;
+    border-radius: 50%;
+    background: rgba(37, 99, 235, 0.055);
+    pointer-events: none;
+}
+
+.admin-page-header > * {
+    position: relative;
+    z-index: 2;
+}
+
+.admin-eyebrow {
+    display: block;
+    margin-bottom: 6px;
+    color: #2563eb;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.15px;
+    text-transform: uppercase;
+}
+
+.admin-page-header h1 {
+    margin: 0;
+    color: #111827;
+    font-size: 31px;
+    font-weight: 800;
+    letter-spacing: -0.55px;
+}
+
+.admin-page-header p {
+    max-width: 720px;
+    margin: 7px 0 0;
+    color: #64748b;
+    font-size: 13px;
+    line-height: 1.65;
+}
+
+.admin-back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 10px;
+    color: #64748b;
+    font-size: 11px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.admin-back-link:hover {
+    color: #2563eb;
+}
+
+.admin-refresh-button {
+    min-height: 42px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 10px 15px;
+    border: 1px solid #dbeafe;
+    border-radius: 11px;
+    background: #ffffff;
+    color: #2563eb;
+    font-size: 11px;
+    font-weight: 700;
+    transition: 0.18s ease;
+}
+
+.admin-refresh-button:hover:not(:disabled) {
+    transform: translateY(-1px);
+    background: #eff6ff;
+    border-color: #bfdbfe;
+}
+
+.admin-refresh-button:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+@keyframes adminSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.admin-spin {
+    animation: adminSpin 0.8s linear infinite;
+}
+
+.admin-alert {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 22px;
+    border: none;
+    border-radius: 11px;
+    font-size: 11px;
+}
+
+/* =========================================================
+   LARGE DASHBOARD STATS
+========================================================= */
+
+.admin-stat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 22px;
+}
+
+.admin-stat-card {
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-height: 108px;
+    padding: 19px;
+    border: 1px solid #e3e9f2;
+    border-radius: 16px;
+    background: #ffffff;
+    box-shadow: 0 7px 22px rgba(15, 23, 42, 0.035);
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.admin-stat-card:hover {
+    transform: translateY(-3px);
+    border-color: #bfdbfe;
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.07);
+}
+
+.admin-stat-icon {
+    width: 51px;
+    height: 51px;
+    min-width: 51px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    font-size: 20px;
+}
+
+.admin-stat-card > div:last-child {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-stat-card span {
+    color: #64748b;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.55px;
+    text-transform: uppercase;
+}
+
+.admin-stat-card strong {
+    margin: 2px 0;
+    color: #172033;
+    font-size: 25px;
+    line-height: 1.2;
+}
+
+.admin-stat-card small {
+    color: #94a3b8;
+    font-size: 9px;
+    line-height: 1.45;
+}
+
+.admin-stat-blue {
+    background: #eff6ff;
+    color: #2563eb;
+}
+
+.admin-stat-purple {
+    background: #f5f3ff;
+    color: #7c3aed;
+}
+
+.admin-stat-green {
+    background: #f0fdf4;
+    color: #16a34a;
+}
+
+.admin-stat-orange {
+    background: #fff7ed;
+    color: #ea580c;
+}
+
+.admin-stat-cyan {
+    background: #ecfeff;
+    color: #0891b2;
+}
+
+.admin-stat-emerald {
+    background: #ecfdf5;
+    color: #059669;
+}
+
+/* =========================================================
+   QUICK LINKS
+========================================================= */
+
+.admin-quick-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 13px;
+    margin-bottom: 22px;
+}
+
+.admin-quick-card {
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding: 16px;
+    border: 1px solid #e5eaf1;
+    border-radius: 14px;
+    background: #ffffff;
+    color: inherit;
+    text-decoration: none;
+    transition: 0.18s ease;
+}
+
+.admin-quick-card:hover {
+    transform: translateY(-2px);
+    border-color: #bfdbfe;
+    box-shadow: 0 9px 23px rgba(15, 23, 42, 0.055);
+}
+
+.admin-quick-card > div {
+    width: 39px;
+    height: 39px;
+    min-width: 39px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 11px;
+    background: #eff6ff;
+    color: #2563eb;
+}
+
+.admin-quick-card > span {
+    min-width: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-quick-card strong {
+    color: #1e293b;
+    font-size: 11px;
+}
+
+.admin-quick-card small {
+    margin-top: 2px;
+    color: #94a3b8;
+    font-size: 8px;
+    line-height: 1.35;
+}
+
+.admin-quick-card > i {
+    color: #94a3b8;
+    font-size: 12px;
+}
+
+/* =========================================================
+   PANELS
+========================================================= */
+
+.admin-dashboard-columns {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.admin-panel {
+    margin-bottom: 22px;
+    padding: 22px;
+    border: 1px solid #e5eaf1;
+    border-radius: 16px;
+    background: #ffffff;
+    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.035);
+}
+
+.admin-panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    margin-bottom: 17px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #eef2f7;
+}
+
+.admin-panel-header span {
+    display: block;
+    margin-bottom: 3px;
+    color: #2563eb;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+.admin-panel-header h3 {
+    margin: 0;
+    color: #172033;
+    font-size: 17px;
+    font-weight: 750;
+}
+
+.admin-panel-header > a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #2563eb;
+    font-size: 10px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+/* =========================================================
+   ACTIVITY
+========================================================= */
+
+.admin-activity-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-activity-item {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding: 12px 0;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.admin-activity-item:last-child {
+    border-bottom: none;
+}
+
+.admin-avatar,
+.admin-activity-icon {
+    width: 39px;
+    height: 39px;
+    min-width: 39px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 11px;
+    background: #eff6ff;
+    color: #2563eb;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.admin-activity-icon {
+    background: #f8fafc;
+    color: #64748b;
+}
+
+.admin-activity-main {
+    min-width: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-activity-main strong {
+    overflow: hidden;
+    color: #1e293b;
+    font-size: 11px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.admin-activity-main span,
+.admin-activity-main small {
+    overflow: hidden;
+    color: #94a3b8;
+    font-size: 9px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* =========================================================
+   STATUS PILLS
+========================================================= */
+
+.admin-status-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    padding: 5px 9px;
+    border-radius: 999px;
+    font-size: 8px;
+    font-weight: 800;
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+.admin-status-admin {
+    background: #fef2f2;
+    color: #dc2626;
+}
+
+.admin-status-recruiter {
+    background: #f5f3ff;
+    color: #7c3aed;
+}
+
+.admin-status-candidate {
+    background: #eff6ff;
+    color: #2563eb;
+}
+
+.admin-status-open,
+.admin-status-selected {
+    background: #ecfdf5;
+    color: #059669;
+}
+
+.admin-status-closed,
+.admin-status-withdrawn {
+    background: #f1f5f9;
+    color: #64748b;
+}
+
+.admin-status-expired,
+.admin-status-rejected {
+    background: #fef2f2;
+    color: #dc2626;
+}
+
+.admin-status-interview {
+    background: #ecfeff;
+    color: #0891b2;
+}
+
+.admin-status-shortlisted {
+    background: #faf5ff;
+    color: #9333ea;
+}
+
+.admin-status-review {
+    background: #fff7ed;
+    color: #ea580c;
+}
+
+.admin-status-applied {
+    background: #eff6ff;
+    color: #2563eb;
+}
+
+.admin-status-default {
+    background: #f1f5f9;
+    color: #64748b;
+}
+
+/* =========================================================
+   MINI STATS
+========================================================= */
+
+.admin-mini-stat-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+    margin-bottom: 22px;
+}
+
+.admin-mini-stat-grid-three {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.admin-mini-stat {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 83px;
+    padding: 15px 17px;
+    border: 1px solid #e5eaf1;
+    border-radius: 14px;
+    background: #ffffff;
+    box-shadow: 0 5px 18px rgba(15, 23, 42, 0.03);
+}
+
+.admin-mini-stat > div {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 11px;
+    background: #eff6ff;
+    color: #2563eb;
+}
+
+.admin-mini-stat > span {
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-mini-stat small {
+    color: #94a3b8;
+    font-size: 9px;
+}
+
+.admin-mini-stat strong {
+    color: #172033;
+    font-size: 20px;
+    line-height: 1.15;
+}
+
+/* =========================================================
+   TOOLBAR / SEARCH
+========================================================= */
+
+.admin-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.admin-search-box {
+    flex: 1;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 0 14px;
+    border: 1px solid #dfe6ef;
+    border-radius: 10px;
+    background: #ffffff;
+    transition: 0.18s ease;
+}
+
+.admin-search-box:focus-within {
+    border-color: #93c5fd;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.07);
+}
+
+.admin-search-box > i {
+    color: #94a3b8;
+}
+
+.admin-search-box input {
+    min-width: 0;
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #334155;
+    font-size: 11px;
+}
+
+.admin-search-box input::placeholder {
+    color: #a8b3c3;
+}
+
+.admin-search-box button {
+    width: 27px;
+    height: 27px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 7px;
+    background: #f8fafc;
+    color: #94a3b8;
+}
+
+.admin-filter-select {
+    width: 195px;
+    height: 46px;
+    border-color: #dfe6ef;
+    color: #475569;
+    font-size: 11px;
+    box-shadow: none !important;
+}
+
+.admin-filter-select:focus {
+    border-color: #93c5fd;
+}
+
+.admin-result-summary {
+    margin-bottom: 15px;
+    color: #94a3b8;
+    font-size: 9px;
+    font-weight: 600;
+}
+
+/* =========================================================
+   TABLES
+========================================================= */
+
+.admin-table-wrap {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.admin-table {
+    width: 100%;
+    min-width: 760px;
+    border-collapse: collapse;
+}
+
+.admin-table th {
+    padding: 10px 12px;
+    border-bottom: 1px solid #e7edf5;
+    color: #94a3b8;
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 0.65px;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.admin-table td {
+    padding: 13px 12px;
+    border-bottom: 1px solid #f0f3f7;
+    color: #475569;
+    font-size: 10px;
+    vertical-align: middle;
+}
+
+.admin-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.admin-table tbody tr:hover {
+    background: #fbfdff;
+}
+
+.admin-table td > strong,
+.admin-table td > span:not(.admin-status-pill) {
+    display: block;
+}
+
+.admin-table td > strong {
+    color: #1e293b;
+    font-size: 10px;
+}
+
+.admin-table td > span:not(.admin-status-pill) {
+    margin-top: 2px;
+    color: #94a3b8;
+    font-size: 8px;
+}
+
+.admin-user-cell {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.admin-user-cell > span {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-user-cell strong {
+    color: #1e293b;
+    font-size: 10px;
+}
+
+.admin-user-cell small {
+    color: #94a3b8;
+    font-size: 8px;
+}
+
+.admin-table-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 9px;
+    border-radius: 7px;
+    background: #eff6ff;
+    color: #2563eb;
+    font-size: 9px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.admin-table-action:hover {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+.admin-muted {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 5px;
+    color: #94a3b8 !important;
+    font-size: 9px !important;
+}
+
+/* =========================================================
+   JOB RECORD CARDS
+========================================================= */
+
+.admin-card-list {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.admin-record-card {
+    display: flex;
+    gap: 15px;
+    padding: 18px;
+    border: 1px solid #e7ecf3;
+    border-radius: 14px;
+    background: #ffffff;
+    transition: 0.18s ease;
+}
+
+.admin-record-card:hover {
+    border-color: #bfdbfe;
+    box-shadow: 0 8px 22px rgba(15, 23, 42, 0.05);
+}
+
+.admin-record-icon {
+    width: 47px;
+    height: 47px;
+    min-width: 47px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    font-size: 18px;
+}
+
+.admin-record-job-icon {
+    background: #eff6ff;
+    color: #2563eb;
+}
+
+.admin-record-main {
+    min-width: 0;
+    flex: 1;
+}
+
+.admin-record-title-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 14px;
+}
+
+.admin-record-title-row > div > span {
+    color: #94a3b8;
+    font-size: 8px;
+    font-weight: 700;
+}
+
+.admin-record-title-row h3 {
+    margin: 2px 0;
+    color: #172033;
+    font-size: 15px;
+    font-weight: 750;
+}
+
+.admin-record-title-row p {
+    margin: 0;
+    color: #64748b;
+    font-size: 9px;
+}
+
+.admin-record-meta-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 9px;
+    margin-top: 13px;
+}
+
+.admin-record-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 10px;
+    border-radius: 9px;
+    background: #f8fafc;
+}
+
+.admin-record-meta > i {
+    color: #94a3b8;
+    font-size: 11px;
+}
+
+.admin-record-meta > span {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-record-meta small {
+    color: #94a3b8;
+    font-size: 7px;
+}
+
+.admin-record-meta strong {
+    overflow: hidden;
+    color: #475569;
+    font-size: 9px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* =========================================================
+   SKILLS
+========================================================= */
+
+.admin-skill-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 12px;
+}
+
+.admin-skill-row > span {
+    padding: 5px 8px;
+    border-radius: 999px;
+    background: #f1f5f9;
+    color: #64748b;
+    font-size: 8px;
+    font-weight: 650;
+}
+
+/* =========================================================
+   RECRUITER / CANDIDATE PROFILE CARDS
+========================================================= */
+
+.admin-profile-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+}
+
+.admin-profile-card {
+    min-width: 0;
+    padding: 18px;
+    border: 1px solid #e5eaf1;
+    border-radius: 15px;
+    background: #ffffff;
+    transition: 0.18s ease;
+}
+
+.admin-profile-card:hover {
+    transform: translateY(-2px);
+    border-color: #bfdbfe;
+    box-shadow: 0 9px 24px rgba(15, 23, 42, 0.055);
+}
+
+.admin-profile-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.admin-profile-avatar {
+    width: 47px;
+    height: 47px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 13px;
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.admin-recruiter-avatar {
+    background: #f5f3ff;
+    color: #7c3aed;
+}
+
+.admin-candidate-avatar {
+    background: #eff6ff;
+    color: #2563eb;
+}
+
+.admin-profile-card h3 {
+    margin: 0;
+    color: #172033;
+    font-size: 14px;
+    font-weight: 750;
+}
+
+.admin-profile-card > p {
+    margin: 3px 0 12px;
+    color: #94a3b8;
+    font-size: 9px;
+}
+
+.admin-profile-company {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 10px;
+    margin-bottom: 11px;
+    border-radius: 10px;
+    background: #f8fafc;
+}
+
+.admin-profile-company > i {
+    color: #64748b;
+}
+
+.admin-profile-company span {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-profile-company small,
+.admin-profile-info-grid small {
+    color: #94a3b8;
+    font-size: 7px;
+}
+
+.admin-profile-company strong,
+.admin-profile-info-grid strong {
+    overflow: hidden;
+    color: #475569;
+    font-size: 9px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.admin-profile-info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+}
+
+.admin-profile-info-grid > div {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 9px;
+    border: 1px solid #edf1f6;
+    border-radius: 9px;
+}
+
+.admin-profile-description {
+    display: -webkit-box;
+    overflow: hidden;
+    margin: 11px 0 0 !important;
+    color: #64748b !important;
+    font-size: 9px !important;
+    line-height: 1.55;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+}
+
+.admin-profile-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 12px;
+    padding: 7px 10px;
+    border-radius: 8px;
+    background: #eff6ff;
+    color: #2563eb;
+    font-size: 9px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.admin-profile-link:hover {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+.admin-profile-card-footer {
+    margin-top: 12px;
+    padding-top: 11px;
+    border-top: 1px solid #eef2f7;
+}
+
+.admin-candidate-detail {
+    display: flex;
+    align-items: flex-start;
+    gap: 7px;
+    margin-top: 10px;
+    color: #64748b;
+    font-size: 9px;
+    line-height: 1.45;
+}
+
+.admin-candidate-detail i {
+    margin-top: 1px;
+    color: #94a3b8;
+}
+
+/* =========================================================
+   EMPTY STATES
+========================================================= */
+
+.admin-empty-state {
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 32px;
+    text-align: center;
+}
+
+.admin-empty-state > i {
+    margin-bottom: 10px;
+    color: #cbd5e1;
+    font-size: 35px;
+}
+
+.admin-empty-state h4 {
+    margin: 0 0 5px;
+    color: #334155;
+    font-size: 14px;
+}
+
+.admin-empty-state p {
+    margin: 0;
+    color: #94a3b8;
+    font-size: 10px;
+}
+
+.admin-inline-empty {
+    min-height: 135px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    color: #94a3b8;
+    font-size: 10px;
+}
+
+.admin-inline-empty i {
+    color: #cbd5e1;
+    font-size: 24px;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1199px) {
+    .admin-stat-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .admin-quick-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .admin-profile-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 991px) {
+    .admin-page {
+        padding-top: 28px;
+    }
+
+    .admin-page-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .admin-dashboard-columns {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-record-meta-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 767px) {
+    .admin-page-header {
+        padding: 22px;
+        border-radius: 16px;
+    }
+
+    .admin-page-header h1 {
+        font-size: 26px;
+    }
+
+    .admin-stat-grid,
+    .admin-mini-stat-grid,
+    .admin-mini-stat-grid-three,
+    .admin-profile-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-quick-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .admin-toolbar {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .admin-filter-select {
+        width: 100%;
+    }
+
+    .admin-record-card {
+        flex-direction: column;
+    }
+
+    .admin-record-title-row {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 520px) {
+    .admin-page {
+        padding: 20px 0 50px;
+    }
+
+    .admin-panel {
+        padding: 16px;
+    }
+
+    .admin-quick-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-record-meta-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* =========================================================
+   CANDIDATE DASHBOARD - FONT SIZE IMPROVEMENT
+========================================================= */
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.candidate-dashboard-eyebrow {
+    font-size: 13px;
+}
+
+.candidate-welcome-section p {
+    font-size: 15px;
+}
+
+.dashboard-find-jobs-button {
+    font-size: 14px;
+}
+
+.dashboard-refresh-button {
+    font-size: 12px;
+}
+
+.candidate-dashboard-alert {
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.candidate-stat-card span {
+    font-size: 13px;
+}
+
+.candidate-stat-card strong {
+    font-size: 28px;
+}
+
+.candidate-stat-card small {
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   NEXT INTERVIEW
+========================================================= */
+
+.dashboard-next-interview-heading span {
+    font-size: 10px;
+}
+
+.dashboard-next-interview-heading h3 {
+    font-size: 19px;
+}
+
+.dashboard-next-interview-heading p {
+    font-size: 11px;
+}
+
+.dashboard-interview-round-badge {
+    font-size: 10px;
+}
+
+.dashboard-next-round small {
+    font-size: 9px;
+}
+
+.dashboard-next-round strong {
+    font-size: 15px;
+}
+
+.dashboard-next-interview-info small {
+    font-size: 9px;
+}
+
+.dashboard-next-interview-info strong {
+    font-size: 11px;
+}
+
+.dashboard-interview-secondary-button,
+.dashboard-interview-primary-button {
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   SECTION HEADERS
+========================================================= */
+
+.dashboard-section-header > div > span {
+    font-size: 12px;
+}
+
+.dashboard-section-header h4 {
+    font-size: 20px;
+}
+
+.dashboard-view-all {
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   PROFILE PROGRESS
+========================================================= */
+
+.profile-progress-footer > div {
+    font-size: 12px;
+}
+
+.profile-progress-footer a {
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   APPLICATION LIST
+========================================================= */
+
+.dashboard-application-info > span {
+    font-size: 11px;
+}
+
+.dashboard-application-info h5 {
+    font-size: 14px;
+}
+
+.dashboard-application-info small {
+    font-size: 11px;
+}
+
+.dashboard-application-status {
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   JOB CARDS
+========================================================= */
+
+.dashboard-open-badge {
+    font-size: 11px;
+}
+
+.dashboard-job-company {
+    font-size: 11px;
+}
+
+.dashboard-job-card h5 {
+    font-size: 15px;
+}
+
+.dashboard-job-meta span {
+    font-size: 11px;
+}
+
+.dashboard-job-button {
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   QUICK ACTIONS
+========================================================= */
+
+.candidate-quick-action strong {
+    font-size: 13px;
+}
+
+.candidate-quick-action span {
+    font-size: 11px;
+}
+
+.candidate-quick-action > i {
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   NOTIFICATIONS
+========================================================= */
+
+.dashboard-unread-badge {
+    font-size: 10px;
+}
+
+.dashboard-notification-content strong {
+    font-size: 12px;
+}
+
+.dashboard-notification-content p {
+    font-size: 11px;
+}
+
+.dashboard-notification-content small {
+    font-size: 10px;
+}
+
+.dashboard-notification-empty p {
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   CAREER CARD
+========================================================= */
+
+.dashboard-career-card > span {
+    font-size: 11px;
+}
+
+.dashboard-career-card h3 {
+    font-size: 22px;
+}
+
+.dashboard-career-card p {
+    font-size: 13px;
+}
+
+.career-progress-stats strong {
+    font-size: 22px;
+}
+
+.career-progress-stats span {
+    font-size: 10px;
+}
+
+.career-progress-extra span {
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   EMPTY STATES
+========================================================= */
+
+.dashboard-empty-state h5 {
+    font-size: 15px;
+}
+
+.dashboard-empty-state p {
+    font-size: 12px;
+}
+
+.dashboard-empty-button {
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .candidate-welcome-section p {
+        font-size: 14px;
+    }
+
+    .candidate-stat-card span {
+        font-size: 12px;
+    }
+
+    .dashboard-application-info h5 {
+        font-size: 13px;
+    }
+
+    .dashboard-job-card h5 {
+        font-size: 14px;
+    }
+
+    .candidate-quick-action strong {
+        font-size: 12px;
+    }
+
+    .candidate-quick-action span {
+        font-size: 10px;
+    }
+}
+
+
+@media (max-width: 576px) {
+
+    .candidate-welcome-section p {
+        font-size: 13px;
+    }
+
+    .dashboard-section-header h4 {
+        font-size: 18px;
+    }
+
+    .dashboard-career-card h3 {
+        font-size: 20px;
+    }
+
+    .dashboard-career-card p {
+        font-size: 12px;
+    }
+}
+/* =========================================================
+   FONT SIZE IMPROVEMENT
+   Slightly larger text for better readability
+========================================================= */
+
+/* Header */
+.admin-eyebrow {
+    font-size: 12px;
+}
+
+.admin-page-header p {
+    font-size: 14px;
+}
+
+.admin-back-link {
+    font-size: 13px;
+}
+
+.admin-refresh-button {
+    font-size: 13px;
+}
+
+.admin-alert {
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   DASHBOARD STATS
+========================================================= */
+
+.admin-stat-card span {
+    font-size: 11px;
+}
+
+.admin-stat-card strong {
+    font-size: 27px;
+}
+
+.admin-stat-card small {
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   QUICK LINKS
+========================================================= */
+
+.admin-quick-card strong {
+    font-size: 13px;
+}
+
+.admin-quick-card small {
+    font-size: 10px;
+}
+
+.admin-quick-card > i {
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   PANEL HEADER
+========================================================= */
+
+.admin-panel-header span {
+    font-size: 11px;
+}
+
+.admin-panel-header h3 {
+    font-size: 18px;
+}
+
+.admin-panel-header > a {
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   ACTIVITY
+========================================================= */
+
+.admin-activity-main strong {
+    font-size: 13px;
+}
+
+.admin-activity-main span,
+.admin-activity-main small {
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   STATUS PILLS
+========================================================= */
+
+.admin-status-pill {
+    font-size: 10px;
+    padding: 5px 10px;
+}
+
+
+/* =========================================================
+   MINI STATS
+========================================================= */
+
+.admin-mini-stat small {
+    font-size: 11px;
+}
+
+.admin-mini-stat strong {
+    font-size: 22px;
+}
+
+
+/* =========================================================
+   SEARCH / FILTER
+========================================================= */
+
+.admin-search-box input {
+    font-size: 13px;
+}
+
+.admin-filter-select {
+    font-size: 13px;
+}
+
+.admin-result-summary {
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.admin-table th {
+    font-size: 10px;
+}
+
+.admin-table td {
+    font-size: 12px;
+}
+
+.admin-table td > strong {
+    font-size: 12px;
+}
+
+.admin-table td > span:not(.admin-status-pill) {
+    font-size: 10px;
+}
+
+.admin-user-cell strong {
+    font-size: 12px;
+}
+
+.admin-user-cell small {
+    font-size: 10px;
+}
+
+.admin-table-action {
+    font-size: 11px;
+}
+
+.admin-muted {
+    font-size: 11px !important;
+}
+
+
+/* =========================================================
+   JOB CARDS
+========================================================= */
+
+.admin-record-title-row > div > span {
+    font-size: 10px;
+}
+
+.admin-record-title-row h3 {
+    font-size: 17px;
+}
+
+.admin-record-title-row p {
+    font-size: 11px;
+}
+
+.admin-record-meta > i {
+    font-size: 13px;
+}
+
+.admin-record-meta small {
+    font-size: 9px;
+}
+
+.admin-record-meta strong {
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   SKILLS
+========================================================= */
+
+.admin-skill-row > span {
+    font-size: 10px;
+    padding: 5px 9px;
+}
+
+
+/* =========================================================
+   PROFILE CARDS
+========================================================= */
+
+.admin-profile-card h3 {
+    font-size: 16px;
+}
+
+.admin-profile-card > p {
+    font-size: 11px;
+}
+
+.admin-profile-company small,
+.admin-profile-info-grid small {
+    font-size: 9px;
+}
+
+.admin-profile-company strong,
+.admin-profile-info-grid strong {
+    font-size: 11px;
+}
+
+.admin-profile-description {
+    font-size: 11px !important;
+}
+
+.admin-profile-link {
+    font-size: 11px;
+}
+
+.admin-candidate-detail {
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   EMPTY STATES
+========================================================= */
+
+.admin-empty-state h4 {
+    font-size: 16px;
+}
+
+.admin-empty-state p {
+    font-size: 12px;
+}
+
+.admin-inline-empty {
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+    .admin-page-header p {
+        font-size: 13px;
+    }
+
+    .admin-table th {
+        font-size: 9px;
+    }
+
+    .admin-table td {
+        font-size: 11px;
+    }
+
+    .admin-record-title-row h3 {
+        font-size: 16px;
+    }
+
+    .admin-profile-card h3 {
+        font-size: 15px;
+    }
+}

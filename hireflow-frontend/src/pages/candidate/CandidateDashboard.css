@@ -1,0 +1,3255 @@
+.candidate-dashboard-page {
+    min-height: calc(100vh - 72px);
+
+    padding: 42px 0 65px;
+
+    background: #f6f8fc;
+}
+
+
+/* =========================================
+   LOADING
+========================================= */
+
+.candidate-dashboard-loading {
+    min-height: calc(100vh - 72px);
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #f6f8fc;
+
+    color: #64748b;
+}
+
+.candidate-dashboard-loading p {
+    margin-top: 14px;
+}
+
+
+/* =========================================
+   WELCOME
+========================================= */
+
+.candidate-welcome-section {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 28px;
+}
+
+.candidate-dashboard-eyebrow {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #2563eb;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+.candidate-welcome-section h1 {
+    margin: 0 0 7px;
+
+    color: #172033;
+
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.candidate-welcome-section h1 > span:first-of-type {
+    color: #2563eb;
+}
+
+.candidate-dashboard-wave {
+    margin-left: 6px;
+
+    color: inherit !important;
+
+    font-size: 27px;
+}
+
+.candidate-welcome-section p {
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 14px;
+}
+
+.candidate-dashboard-header-actions {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+}
+
+.dashboard-find-jobs-button {
+    padding: 11px 20px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #1d4ed8
+        );
+
+    color: white;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+.dashboard-find-jobs-button:hover {
+    color: white;
+
+    box-shadow:
+        0 7px 18px
+        rgba(37, 99, 235, 0.25);
+}
+
+.dashboard-refresh-button {
+    min-height: 41px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    padding: 0 14px;
+
+    border: 1px solid #dbe3ee;
+    border-radius: 10px;
+
+    background: white;
+
+    color: #64748b;
+
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.dashboard-refresh-button:hover:not(:disabled) {
+    background: #eff6ff;
+
+    border-color: #bfdbfe;
+
+    color: #2563eb;
+}
+
+.dashboard-refresh-button:disabled {
+    opacity: 0.65;
+}
+
+
+/* =========================================
+   ALERT
+========================================= */
+
+.candidate-dashboard-alert {
+    border: none;
+
+    border-radius: 10px;
+
+    font-size: 11px;
+}
+
+
+/* =========================================
+   STATS
+========================================= */
+
+.candidate-dashboard-stats {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 16px;
+
+    margin-bottom: 25px;
+}
+
+.candidate-stat-card {
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 18px;
+
+    background: white;
+
+    border:
+        1px solid #e7ecf3;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 5px 18px
+        rgba(15, 23, 42, 0.04);
+
+    text-decoration: none;
+
+    transition: 0.2s;
+}
+
+.candidate-stat-card:hover {
+    transform: translateY(-2px);
+
+    border-color: #bfdbfe;
+
+    box-shadow:
+        0 9px 24px
+        rgba(15, 23, 42, 0.07);
+}
+
+.candidate-stat-icon {
+    width: 48px;
+    height: 48px;
+
+    min-width: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    font-size: 18px;
+}
+
+.stat-blue {
+    background: #eff6ff;
+    color: #2563eb;
+}
+
+.stat-orange {
+    background: #fff7ed;
+    color: #ea580c;
+}
+
+.stat-purple {
+    background: #faf5ff;
+    color: #9333ea;
+}
+
+.stat-green {
+    background: #f0fdf4;
+    color: #16a34a;
+}
+
+.candidate-stat-card > div:last-child {
+    display: flex;
+    flex-direction: column;
+}
+
+.candidate-stat-card span {
+    color: #64748b;
+
+    font-size: 10px;
+}
+
+.candidate-stat-card strong {
+    color: #1e293b;
+
+    font-size: 22px;
+
+    line-height: 1.2;
+}
+
+.candidate-stat-card small {
+    margin-top: 2px;
+
+    color: #94a3b8;
+
+    font-size: 9px;
+}
+
+
+/* =========================================
+   NEXT INTERVIEW
+========================================= */
+
+.dashboard-next-interview-card {
+    position: relative;
+
+    overflow: hidden;
+
+    margin-bottom: 25px;
+
+    padding: 23px;
+
+    border: 1px solid #bfdbfe;
+    border-radius: 17px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #f1f7ff
+        );
+
+    box-shadow:
+        0 8px 25px
+        rgba(37, 99, 235, 0.07);
+}
+
+.dashboard-next-interview-accent {
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+    left: 0;
+
+    width: 5px;
+
+    background:
+        linear-gradient(
+            #2563eb,
+            #60a5fa
+        );
+}
+
+.dashboard-next-interview-top {
+    display: flex;
+
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 18px;
+}
+
+.dashboard-next-interview-heading {
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+}
+
+.dashboard-next-interview-icon {
+    width: 49px;
+    height: 49px;
+
+    min-width: 49px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 13px;
+
+    background: #dbeafe;
+
+    color: #2563eb;
+
+    font-size: 20px;
+}
+
+.dashboard-next-interview-heading span {
+    display: block;
+
+    margin-bottom: 2px;
+
+    color: #2563eb;
+
+    font-size: 8px;
+    font-weight: 700;
+
+    letter-spacing: 0.7px;
+
+    text-transform: uppercase;
+}
+
+.dashboard-next-interview-heading h3 {
+    margin: 0;
+
+    color: #1e293b;
+
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.dashboard-next-interview-heading p {
+    margin: 3px 0 0;
+
+    color: #94a3b8;
+
+    font-size: 9px;
+}
+
+.dashboard-interview-round-badge {
+    padding: 6px 10px;
+
+    border-radius: 20px;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-size: 8px;
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+.dashboard-next-interview-content {
+    padding-left: 62px;
+}
+
+.dashboard-next-round {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 14px;
+}
+
+.dashboard-next-round small {
+    color: #94a3b8;
+
+    font-size: 7px;
+
+    text-transform: uppercase;
+}
+
+.dashboard-next-round strong {
+    margin-top: 2px;
+
+    color: #334155;
+
+    font-size: 13px;
+}
+
+.dashboard-next-interview-info {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 10px;
+}
+
+.dashboard-next-interview-info > div {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 11px;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+
+    background: white;
+}
+
+.dashboard-next-interview-info > div > i {
+    color: #2563eb;
+
+    font-size: 13px;
+}
+
+.dashboard-next-interview-info span {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard-next-interview-info small {
+    color: #94a3b8;
+
+    font-size: 7px;
+
+    text-transform: uppercase;
+}
+
+.dashboard-next-interview-info strong {
+    margin-top: 1px;
+
+    color: #475569;
+
+    font-size: 9px;
+
+    overflow-wrap: anywhere;
+}
+
+.dashboard-next-interview-actions {
+    display: flex;
+    justify-content: flex-end;
+
+    gap: 8px;
+
+    margin-top: 16px;
+}
+
+.dashboard-interview-secondary-button,
+.dashboard-interview-primary-button {
+    min-height: 38px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    padding: 0 14px;
+
+    border-radius: 9px;
+
+    text-decoration: none;
+
+    font-size: 9px;
+    font-weight: 600;
+}
+
+.dashboard-interview-secondary-button {
+    border: 1px solid #dbe3ee;
+
+    background: white;
+
+    color: #64748b;
+}
+
+.dashboard-interview-secondary-button:hover {
+    background: #eff6ff;
+
+    color: #2563eb;
+}
+
+.dashboard-interview-primary-button {
+    border: 1px solid #2563eb;
+
+    background: #2563eb;
+
+    color: white;
+}
+
+.dashboard-interview-primary-button:hover {
+    background: #1d4ed8;
+
+    color: white;
+}
+
+
+/* =========================================
+   SECTION CARD
+========================================= */
+
+.dashboard-section-card {
+    margin-bottom: 22px;
+
+    padding: 24px;
+
+    background: white;
+
+    border: 1px solid #e7ecf3;
+
+    border-radius: 17px;
+
+    box-shadow:
+        0 6px 22px
+        rgba(15, 23, 42, 0.04);
+}
+
+.dashboard-section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+}
+
+.dashboard-section-header > div > span {
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: #2563eb;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.8px;
+}
+
+.dashboard-section-header h4 {
+    margin: 0;
+
+    color: #1e293b;
+
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.dashboard-view-all {
+    display: flex;
+    align-items: center;
+
+    gap: 5px;
+
+    color: #2563eb;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    text-decoration: none;
+}
+
+.dashboard-view-all:hover {
+    color: #1d4ed8;
+}
+
+
+/* =========================================
+   PROFILE COMPLETION
+========================================= */
+
+.profile-progress-value {
+    color: #2563eb !important;
+
+    font-size: 18px !important;
+
+    font-weight: 700 !important;
+
+    letter-spacing: 0 !important;
+}
+
+.candidate-progress-track {
+    height: 9px;
+
+    overflow: hidden;
+
+    background: #eaf0f8;
+
+    border-radius: 10px;
+}
+
+.candidate-progress-value {
+    height: 100%;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #2563eb,
+            #60a5fa
+        );
+
+    transition: width 0.5s ease;
+}
+
+.profile-progress-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-top: 14px;
+}
+
+.profile-progress-footer > div {
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+
+    color: #64748b;
+
+    font-size: 10px;
+}
+
+.profile-progress-footer > div i {
+    color: #22c55e;
+}
+
+.profile-progress-footer a {
+    color: #2563eb;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    text-decoration: none;
+}
+
+
+/* =========================================
+   APPLICATIONS
+========================================= */
+
+.dashboard-application-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard-application-item {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 14px 0;
+
+    border-bottom:
+        1px solid #edf2f7;
+}
+
+.dashboard-application-item:first-child {
+    padding-top: 0;
+}
+
+.dashboard-application-item:last-child {
+    padding-bottom: 0;
+
+    border-bottom: none;
+}
+
+.dashboard-company-logo {
+    width: 43px;
+    height: 43px;
+
+    min-width: 43px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 11px;
+
+    background: #eff6ff;
+
+    color: #2563eb;
+
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.dashboard-application-info {
+    min-width: 0;
+
+    flex: 1;
+}
+
+.dashboard-application-info > span {
+    display: block;
+
+    margin-bottom: 2px;
+
+    color: #94a3b8;
+
+    font-size: 9px;
+}
+
+.dashboard-application-info h5 {
+    margin: 0 0 4px;
+
+    color: #334155;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    overflow-wrap: anywhere;
+}
+
+.dashboard-application-info small {
+    display: flex;
+    align-items: center;
+
+    gap: 5px;
+
+    color: #94a3b8;
+
+    font-size: 9px;
+}
+
+.dashboard-application-status {
+    padding: 5px 9px;
+
+    border-radius: 20px;
+
+    font-size: 8px;
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+.dashboard-status-applied {
+    background: #eff6ff;
+    color: #2563eb;
+}
+
+.dashboard-status-review {
+    background: #fff7ed;
+    color: #ea580c;
+}
+
+.dashboard-status-shortlisted {
+    background: #faf5ff;
+    color: #9333ea;
+}
+
+.dashboard-status-interview {
+    background: #ecfeff;
+    color: #0891b2;
+}
+
+.dashboard-status-selected {
+    background: #f0fdf4;
+    color: #16a34a;
+}
+
+.dashboard-status-rejected {
+    background: #fef2f2;
+    color: #dc2626;
+}
+
+.dashboard-status-withdrawn {
+    background: #f1f5f9;
+    color: #64748b;
+}
+
+.dashboard-item-arrow {
+    width: 33px;
+    height: 33px;
+
+    min-width: 33px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #f8fafc;
+
+    color: #94a3b8;
+}
+
+.dashboard-item-arrow:hover {
+    background: #eff6ff;
+
+    color: #2563eb;
+}
+
+
+/* =========================================
+   LATEST JOBS
+========================================= */
+
+.dashboard-job-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 13px;
+}
+
+.dashboard-job-card {
+    padding: 17px;
+
+    border: 1px solid #e7ecf3;
+
+    border-radius: 13px;
+
+    background: #fbfcfe;
+
+    transition: 0.2s;
+}
+
+.dashboard-job-card:hover {
+    background: white;
+
+    border-color: #bfdbfe;
+
+    box-shadow:
+        0 7px 18px
+        rgba(15, 23, 42, 0.05);
+}
+
+.dashboard-job-card-top {
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 12px;
+}
+
+.dashboard-job-company-logo {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: #dbeafe;
+
+    color: #2563eb;
+
+    font-weight: 700;
+}
+
+.dashboard-open-badge {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 5px;
+
+    height: fit-content;
+
+    padding: 4px 7px;
+
+    border-radius: 20px;
+
+    background: #f0fdf4;
+
+    color: #16a34a;
+
+    font-size: 8px;
+    font-weight: 700;
+}
+
+.dashboard-open-badge > span {
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: currentColor;
+}
+
+.dashboard-job-company {
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: #94a3b8;
+
+    font-size: 9px;
+}
+
+.dashboard-job-card h5 {
+    margin-bottom: 10px;
+
+    color: #334155;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.dashboard-job-meta {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 9px;
+
+    margin-bottom: 13px;
+}
+
+.dashboard-job-meta span {
+    display: flex;
+    align-items: center;
+
+    gap: 4px;
+
+    color: #64748b;
+
+    font-size: 8px;
+}
+
+.dashboard-job-meta i {
+    color: #2563eb;
+}
+
+.dashboard-job-button {
+    width: 100%;
+
+    padding: 7px;
+
+    border: 1px solid #bfdbfe;
+
+    background: #eff6ff;
+
+    color: #2563eb;
+
+    border-radius: 8px;
+
+    font-size: 9px;
+    font-weight: 600;
+}
+
+.dashboard-job-button:hover {
+    background: #dbeafe;
+
+    color: #1d4ed8;
+}
+
+
+/* =========================================
+   QUICK ACTIONS
+========================================= */
+
+.candidate-quick-actions {
+    display: flex;
+    flex-direction: column;
+}
+
+.candidate-quick-action {
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+
+    padding: 13px 0;
+
+    border-bottom:
+        1px solid #edf2f7;
+
+    text-decoration: none;
+
+    transition: 0.2s;
+}
+
+.candidate-quick-action:first-child {
+    padding-top: 0;
+}
+
+.candidate-quick-action:last-child {
+    padding-bottom: 0;
+
+    border-bottom: none;
+}
+
+.quick-action-icon {
+    width: 40px;
+    height: 40px;
+
+    min-width: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+}
+
+.quick-blue {
+    background: #eff6ff;
+    color: #2563eb;
+}
+
+.quick-purple {
+    background: #faf5ff;
+    color: #9333ea;
+}
+
+.quick-orange {
+    background: #fff7ed;
+    color: #ea580c;
+}
+
+.quick-green {
+    background: #f0fdf4;
+    color: #16a34a;
+}
+
+.quick-cyan {
+    background: #ecfeff;
+    color: #0891b2;
+}
+
+.candidate-quick-action > div:nth-child(2) {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.candidate-quick-action strong {
+    color: #334155;
+
+    font-size: 11px;
+}
+
+.candidate-quick-action span {
+    color: #94a3b8;
+
+    font-size: 9px;
+}
+
+.candidate-quick-action > i {
+    color: #cbd5e1;
+
+    font-size: 11px;
+}
+
+.candidate-quick-action:hover > i {
+    color: #2563eb;
+}
+
+
+/* =========================================
+   NOTIFICATIONS
+========================================= */
+
+.dashboard-unread-badge {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 5px 8px;
+
+    border-radius: 20px;
+
+    background: #eff6ff;
+
+    color: #2563eb;
+
+    font-size: 8px;
+    font-weight: 700;
+}
+
+.dashboard-notification-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard-notification-item {
+    width: 100%;
+
+    display: flex;
+    align-items: flex-start;
+
+    gap: 10px;
+
+    padding: 12px 0;
+
+    border: none;
+    border-bottom:
+        1px solid #edf2f7;
+
+    background: transparent;
+
+    text-align: left;
+}
+
+.dashboard-notification-item:first-child {
+    padding-top: 0;
+}
+
+.dashboard-notification-item:last-child {
+    padding-bottom: 0;
+
+    border-bottom: none;
+}
+
+.dashboard-notification-item:hover {
+    background: #fbfdff;
+}
+
+.dashboard-notification-item.unread
+.dashboard-notification-icon {
+    background: #dbeafe;
+
+    color: #2563eb;
+}
+
+.dashboard-notification-icon {
+    width: 35px;
+    height: 35px;
+
+    min-width: 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 9px;
+
+    background: #f1f5f9;
+
+    color: #64748b;
+
+    font-size: 12px;
+}
+
+.dashboard-notification-content {
+    min-width: 0;
+
+    flex: 1;
+}
+
+.dashboard-notification-content > div {
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+}
+
+.dashboard-notification-content strong {
+    color: #334155;
+
+    font-size: 10px;
+}
+
+.dashboard-notification-dot {
+    width: 6px;
+    height: 6px;
+
+    min-width: 6px;
+
+    border-radius: 50%;
+
+    background: #2563eb;
+}
+
+.dashboard-notification-content p {
+    margin: 3px 0;
+
+    color: #64748b;
+
+    font-size: 9px;
+    line-height: 1.5;
+
+    overflow-wrap: anywhere;
+}
+
+.dashboard-notification-content small {
+    color: #94a3b8;
+
+    font-size: 8px;
+}
+
+.dashboard-notification-empty {
+    min-height: 120px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #94a3b8;
+
+    text-align: center;
+}
+
+.dashboard-notification-empty i {
+    margin-bottom: 7px;
+
+    color: #2563eb;
+
+    font-size: 24px;
+}
+
+.dashboard-notification-empty p {
+    margin: 0;
+
+    font-size: 9px;
+}
+
+
+/* =========================================
+   CAREER CARD
+========================================= */
+
+.dashboard-career-card {
+    padding: 26px;
+
+    border-radius: 17px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #172554,
+            #1d4ed8
+        );
+
+    color: white;
+
+    box-shadow:
+        0 12px 30px
+        rgba(29, 78, 216, 0.2);
+}
+
+.career-card-icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 18px;
+
+    border-radius: 13px;
+
+    background:
+        rgba(255, 255, 255, 0.15);
+
+    font-size: 18px;
+}
+
+.dashboard-career-card > span {
+    color:
+        rgba(255, 255, 255, 0.65);
+
+    font-size: 9px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+.dashboard-career-card h3 {
+    margin: 6px 0 10px;
+
+    font-size: 20px;
+
+    font-weight: 700;
+}
+
+.dashboard-career-card p {
+    color:
+        rgba(255, 255, 255, 0.72);
+
+    font-size: 11px;
+
+    line-height: 1.7;
+}
+
+.career-progress-stats {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    margin-top: 20px;
+
+    padding-top: 17px;
+
+    border-top:
+        1px solid
+        rgba(255, 255, 255, 0.15);
+}
+
+.career-progress-stats div {
+    display: flex;
+    flex-direction: column;
+
+    text-align: center;
+}
+
+.career-progress-stats strong {
+    font-size: 18px;
+}
+
+.career-progress-stats span {
+    color:
+        rgba(255, 255, 255, 0.65);
+
+    font-size: 8px;
+}
+
+.career-progress-extra {
+    display: flex;
+    flex-direction: column;
+
+    gap: 7px;
+
+    margin-top: 17px;
+    padding-top: 15px;
+
+    border-top:
+        1px solid
+        rgba(255, 255, 255, 0.15);
+}
+
+.career-progress-extra span {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    color:
+        rgba(255, 255, 255, 0.75);
+
+    font-size: 9px;
+}
+
+
+/* =========================================
+   EMPTY
+========================================= */
+
+.dashboard-empty-state {
+    min-height: 190px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.dashboard-empty-state > div {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 10px;
+
+    border-radius: 50%;
+
+    background: #eff6ff;
+
+    color: #2563eb;
+
+    font-size: 19px;
+}
+
+.dashboard-empty-state h5 {
+    color: #334155;
+
+    font-size: 13px;
+}
+
+.dashboard-empty-state p {
+    max-width: 350px;
+
+    color: #94a3b8;
+
+    font-size: 10px;
+}
+
+.dashboard-empty-button {
+    padding: 7px 13px;
+
+    background: #2563eb;
+
+    color: white;
+
+    border-radius: 8px;
+
+    font-size: 9px;
+}
+
+.dashboard-empty-button:hover {
+    background: #1d4ed8;
+
+    color: white;
+}
+
+.dashboard-small-empty {
+    min-height: 100px;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .candidate-dashboard-stats {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .dashboard-next-interview-info {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    .candidate-dashboard-page {
+        padding-top: 28px;
+    }
+
+    .candidate-welcome-section {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .candidate-welcome-section h1 {
+        font-size: 27px;
+    }
+
+    .candidate-dashboard-header-actions {
+        width: 100%;
+    }
+
+    .dashboard-find-jobs-button,
+    .dashboard-refresh-button {
+        flex: 1;
+    }
+
+    .dashboard-next-interview-top {
+        flex-direction: column;
+    }
+
+    .dashboard-next-interview-content {
+        padding-left: 0;
+    }
+
+    .dashboard-next-interview-info {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-next-interview-actions {
+        justify-content: stretch;
+    }
+
+    .dashboard-interview-secondary-button,
+    .dashboard-interview-primary-button {
+        flex: 1;
+    }
+
+    .dashboard-job-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-progress-footer {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .dashboard-application-item {
+        flex-wrap: wrap;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .candidate-dashboard-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-section-card {
+        padding: 18px;
+    }
+
+    .candidate-dashboard-header-actions {
+        flex-direction: column;
+    }
+
+    .dashboard-find-jobs-button,
+    .dashboard-refresh-button {
+        width: 100%;
+    }
+
+    .dashboard-next-interview-card {
+        padding: 18px;
+    }
+
+    .dashboard-next-interview-heading {
+        align-items: flex-start;
+    }
+
+    .dashboard-next-interview-icon {
+        width: 42px;
+        height: 42px;
+
+        min-width: 42px;
+    }
+
+    .dashboard-next-interview-actions {
+        flex-direction: column;
+    }
+
+    .dashboard-interview-secondary-button,
+    .dashboard-interview-primary-button {
+        width: 100%;
+    }
+
+    .dashboard-application-status {
+        order: 4;
+
+        margin-left: 55px;
+    }
+}
+/* =========================================================
+   CANDIDATE DASHBOARD - UI UPGRADE
+   Add this block at the END of CandidateDashboard.css
+========================================================= */
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.candidate-dashboard-page {
+    padding: 38px 0 70px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #f8fafc 0%,
+            #f4f7fb 100%
+        );
+}
+
+
+/* =========================================================
+   WELCOME / HERO
+========================================================= */
+
+.candidate-welcome-section {
+    position: relative;
+
+    overflow: hidden;
+
+    margin-bottom: 30px;
+    padding: 28px 30px;
+
+    border:
+        1px solid #dbeafe;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff 0%,
+            #f8fbff 50%,
+            #eff6ff 100%
+        );
+
+    box-shadow:
+        0 14px 40px
+        rgba(15, 23, 42, 0.06);
+}
+
+
+.candidate-welcome-section::after {
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    top: -110px;
+    right: -70px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(37, 99, 235, 0.06);
+
+    pointer-events: none;
+}
+
+
+.candidate-dashboard-eyebrow {
+    margin-bottom: 7px;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 1.2px;
+}
+
+
+.candidate-welcome-section h1 {
+    margin-bottom: 8px;
+
+    color: #0f172a;
+
+    font-size: 34px;
+    font-weight: 800;
+
+    letter-spacing: -0.7px;
+}
+
+
+.candidate-welcome-section p {
+    max-width: 680px;
+
+    color: #64748b;
+
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+.dashboard-find-jobs-button {
+    position: relative;
+    z-index: 2;
+
+    padding: 12px 22px;
+
+    border-radius: 12px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    box-shadow:
+        0 8px 20px
+        rgba(37, 99, 235, 0.18);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.dashboard-find-jobs-button:hover {
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 12px 26px
+        rgba(37, 99, 235, 0.25);
+}
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.candidate-dashboard-stats {
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 18px;
+
+    margin-bottom: 28px;
+}
+
+
+.candidate-stat-card {
+    position: relative;
+
+    overflow: hidden;
+
+    min-height: 108px;
+
+    gap: 15px;
+
+    padding: 20px;
+
+    border:
+        1px solid #e2e8f0;
+
+    border-radius: 18px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 8px 24px
+        rgba(15, 23, 42, 0.045);
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.candidate-stat-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 70px;
+    height: 70px;
+
+    top: -35px;
+    right: -35px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(37, 99, 235, 0.035);
+}
+
+
+.candidate-stat-card:hover {
+    transform:
+        translateY(-3px);
+
+    border-color:
+        #bfdbfe;
+
+    box-shadow:
+        0 14px 32px
+        rgba(15, 23, 42, 0.08);
+}
+
+
+.candidate-stat-icon {
+    width: 52px;
+    height: 52px;
+
+    min-width: 52px;
+
+    border-radius: 14px;
+
+    font-size: 20px;
+
+    box-shadow:
+        inset 0 0 0 1px
+        rgba(255, 255, 255, 0.7);
+}
+
+
+.candidate-stat-card span {
+    margin-bottom: 2px;
+
+    color: #64748b;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+.candidate-stat-card strong {
+    color: #0f172a;
+
+    font-size: 27px;
+    font-weight: 800;
+
+    line-height: 1.1;
+}
+
+
+.candidate-stat-card small {
+    margin-top: 4px;
+
+    color: #94a3b8;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   SECTION CARDS
+========================================================= */
+
+.dashboard-section-card {
+    margin-bottom: 24px;
+
+    padding: 26px;
+
+    border:
+        1px solid #e2e8f0;
+
+    border-radius: 20px;
+
+    background:
+        rgba(255, 255, 255, 0.96);
+
+    box-shadow:
+        0 10px 30px
+        rgba(15, 23, 42, 0.045);
+
+    transition:
+        box-shadow 0.2s ease;
+}
+
+
+.dashboard-section-card:hover {
+    box-shadow:
+        0 13px 34px
+        rgba(15, 23, 42, 0.065);
+}
+
+
+.dashboard-section-header {
+    margin-bottom: 22px;
+}
+
+
+.dashboard-section-header > div > span {
+    margin-bottom: 4px;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+.dashboard-section-header h4 {
+    color: #0f172a;
+
+    font-size: 19px;
+    font-weight: 800;
+}
+
+
+.dashboard-view-all {
+    padding: 7px 10px;
+
+    border-radius: 8px;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+
+.dashboard-view-all:hover {
+    background:
+        #eff6ff;
+
+    color:
+        #1d4ed8;
+}
+
+
+/* =========================================================
+   PROFILE PROGRESS
+========================================================= */
+
+.profile-progress-card {
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #fbfdff
+        );
+}
+
+
+.candidate-progress-track {
+    height: 10px;
+
+    background:
+        #e2e8f0;
+
+    border-radius: 20px;
+}
+
+
+.candidate-progress-value {
+    background:
+        linear-gradient(
+            90deg,
+            #2563eb,
+            #3b82f6,
+            #60a5fa
+        );
+
+    box-shadow:
+        0 0 12px
+        rgba(37, 99, 235, 0.3);
+}
+
+
+.profile-progress-value {
+    padding: 5px 10px;
+
+    border-radius: 9px;
+
+    background:
+        #eff6ff;
+
+    font-size: 17px !important;
+}
+
+
+.profile-progress-footer {
+    margin-top: 16px;
+}
+
+
+.profile-progress-footer > div {
+    font-size: 11px;
+}
+
+
+.profile-progress-footer a {
+    padding: 6px 10px;
+
+    border-radius: 8px;
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+
+.profile-progress-footer a:hover {
+    background:
+        #eff6ff;
+}
+
+
+/* =========================================================
+   APPLICATION LIST
+========================================================= */
+
+.dashboard-application-list {
+    gap: 8px;
+}
+
+
+.dashboard-application-item {
+    padding: 13px 14px;
+
+    border:
+        1px solid transparent;
+
+    border-bottom:
+        1px solid #edf2f7;
+
+    border-radius: 12px;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.dashboard-application-item:hover {
+    transform:
+        translateX(3px);
+
+    border-color:
+        #dbeafe;
+
+    background:
+        #f8fbff;
+}
+
+
+.dashboard-application-item:first-child {
+    padding-top: 13px;
+}
+
+
+.dashboard-application-item:last-child {
+    padding-bottom: 13px;
+
+    border-bottom:
+        1px solid transparent;
+}
+
+
+.dashboard-company-logo {
+    width: 46px;
+    height: 46px;
+
+    min-width: 46px;
+
+    border-radius: 13px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #dbeafe,
+            #eff6ff
+        );
+
+    font-size: 17px;
+
+    box-shadow:
+        inset 0 0 0 1px
+        rgba(37, 99, 235, 0.08);
+}
+
+
+.dashboard-application-info > span {
+    margin-bottom: 3px;
+
+    font-size: 10px;
+}
+
+
+.dashboard-application-info h5 {
+    margin-bottom: 5px;
+
+    color: #1e293b;
+
+    font-size: 13px;
+}
+
+
+.dashboard-application-info small {
+    font-size: 10px;
+}
+
+
+.dashboard-application-status {
+    padding: 6px 10px;
+
+    font-size: 9px;
+    font-weight: 800;
+}
+
+
+.dashboard-item-arrow {
+    width: 35px;
+    height: 35px;
+
+    border-radius: 10px;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.dashboard-item-arrow:hover {
+    transform:
+        translateX(2px);
+}
+
+
+/* =========================================================
+   JOB CARDS
+========================================================= */
+
+.dashboard-job-grid {
+    gap: 16px;
+}
+
+
+.dashboard-job-card {
+    padding: 20px;
+
+    border:
+        1px solid #e2e8f0;
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #fbfdff
+        );
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.dashboard-job-card:hover {
+    transform:
+        translateY(-4px);
+
+    border-color:
+        #bfdbfe;
+
+    box-shadow:
+        0 14px 30px
+        rgba(15, 23, 42, 0.075);
+}
+
+
+.dashboard-job-company-logo {
+    width: 44px;
+    height: 44px;
+
+    border-radius: 12px;
+}
+
+
+.dashboard-open-badge {
+    padding: 5px 9px;
+
+    font-size: 9px;
+}
+
+
+.dashboard-job-company {
+    margin-bottom: 4px;
+
+    font-size: 10px;
+}
+
+
+.dashboard-job-card h5 {
+    margin-bottom: 12px;
+
+    color: #1e293b;
+
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+
+.dashboard-job-meta {
+    gap: 12px;
+
+    margin-bottom: 15px;
+}
+
+
+.dashboard-job-meta span {
+    font-size: 9px;
+}
+
+
+.dashboard-job-button {
+    padding: 9px 10px;
+
+    border-radius: 10px;
+
+    font-size: 10px;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.dashboard-job-button:hover {
+    transform:
+        translateY(-1px);
+}
+
+
+/* =========================================================
+   QUICK ACTIONS
+========================================================= */
+
+.candidate-quick-actions {
+    gap: 8px;
+}
+
+
+.candidate-quick-action {
+    gap: 13px;
+
+    padding: 12px 13px;
+
+    border:
+        1px solid transparent;
+
+    border-radius: 12px;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.candidate-quick-action:first-child {
+    padding-top: 12px;
+}
+
+
+.candidate-quick-action:last-child {
+    padding-bottom: 12px;
+}
+
+
+.candidate-quick-action:hover {
+    transform:
+        translateX(3px);
+
+    border-color:
+        #dbeafe;
+
+    background:
+        #f8fbff;
+}
+
+
+.quick-action-icon {
+    width: 43px;
+    height: 43px;
+
+    min-width: 43px;
+
+    border-radius: 12px;
+
+    font-size: 16px;
+}
+
+
+.candidate-quick-action strong {
+    color: #1e293b;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+.candidate-quick-action span {
+    margin-top: 2px;
+
+    color: #94a3b8;
+
+    font-size: 10px;
+    line-height: 1.4;
+}
+
+
+.candidate-quick-action > i {
+    font-size: 12px;
+
+    transition:
+        transform 0.2s ease;
+}
+
+
+.candidate-quick-action:hover > i {
+    transform:
+        translateX(3px);
+}
+
+
+/* =========================================================
+   JOB OFFER + CAREER CARDS
+========================================================= */
+
+.dashboard-career-card {
+    position: relative;
+
+    overflow: hidden;
+
+    margin-bottom: 22px;
+
+    padding: 28px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #172554 0%,
+            #1d4ed8 55%,
+            #2563eb 100%
+        );
+
+    box-shadow:
+        0 16px 34px
+        rgba(29, 78, 216, 0.22);
+}
+
+
+.dashboard-career-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    right: -70px;
+    top: -80px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.08);
+}
+
+
+.dashboard-career-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 110px;
+    height: 110px;
+
+    left: -50px;
+    bottom: -55px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.045);
+}
+
+
+.dashboard-career-card > * {
+    position: relative;
+    z-index: 2;
+}
+
+
+.career-card-icon {
+    width: 52px;
+    height: 52px;
+
+    margin-bottom: 19px;
+
+    border-radius: 15px;
+
+    background:
+        rgba(255, 255, 255, 0.14);
+
+    backdrop-filter:
+        blur(5px);
+
+    font-size: 20px;
+}
+
+
+.dashboard-career-card > span {
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 1.2px;
+}
+
+
+.dashboard-career-card h3 {
+    margin: 7px 0 11px;
+
+    font-size: 21px;
+    font-weight: 800;
+
+    line-height: 1.35;
+}
+
+
+.dashboard-career-card p {
+    margin-bottom: 0;
+
+    font-size: 11px;
+    line-height: 1.8;
+}
+
+
+.career-progress-stats {
+    gap: 8px;
+
+    margin-top: 22px;
+
+    padding-top: 18px;
+}
+
+
+.career-progress-stats div {
+    padding: 5px;
+}
+
+
+.career-progress-stats strong {
+    font-size: 21px;
+    font-weight: 800;
+}
+
+
+.career-progress-stats span {
+    margin-top: 3px;
+
+    font-size: 9px;
+}
+
+
+/* Button used inside offer summary card */
+
+.dashboard-career-card
+.dashboard-job-button {
+    position: relative;
+    z-index: 2;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.28);
+
+    background:
+        rgba(255, 255, 255, 0.13);
+
+    color: #ffffff;
+
+    backdrop-filter:
+        blur(6px);
+}
+
+
+.dashboard-career-card
+.dashboard-job-button:hover {
+    border-color:
+        rgba(255, 255, 255, 0.4);
+
+    background:
+        rgba(255, 255, 255, 0.2);
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.dashboard-empty-state {
+    min-height: 190px;
+
+    padding: 25px;
+
+    border:
+        1px dashed #dbe3ef;
+
+    border-radius: 15px;
+
+    background:
+        #fbfdff;
+}
+
+
+.dashboard-empty-state > div {
+    width: 54px;
+    height: 54px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #eff6ff,
+            #dbeafe
+        );
+
+    font-size: 20px;
+}
+
+
+.dashboard-empty-state h5 {
+    margin-top: 3px;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+.dashboard-empty-state p {
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+
+.dashboard-empty-button {
+    padding: 8px 15px;
+
+    border-radius: 9px;
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   ALERT
+========================================================= */
+
+.candidate-dashboard-alert {
+    margin-bottom: 22px;
+
+    padding: 12px 16px;
+
+    border:
+        1px solid #fecaca;
+
+    border-radius: 12px;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1200px) {
+
+    .candidate-dashboard-stats {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+@media (max-width: 992px) {
+
+    .candidate-dashboard-page {
+        padding:
+            30px 0 55px;
+    }
+
+
+    .candidate-welcome-section {
+        padding:
+            24px;
+    }
+
+
+    .candidate-welcome-section h1 {
+        font-size:
+            30px;
+    }
+
+
+    .dashboard-section-card {
+        padding:
+            22px;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    .candidate-welcome-section {
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+
+        padding:
+            22px;
+    }
+
+
+    .candidate-welcome-section h1 {
+        font-size:
+            27px;
+    }
+
+
+    .dashboard-find-jobs-button {
+        width: 100%;
+    }
+
+
+    .candidate-dashboard-stats {
+        gap: 13px;
+    }
+
+
+    .dashboard-job-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .dashboard-application-item {
+        flex-wrap:
+            wrap;
+
+        gap:
+            10px;
+    }
+
+
+    .dashboard-application-status {
+        margin-left:
+            58px;
+    }
+
+
+    .profile-progress-footer {
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+    }
+}
+
+
+@media (max-width: 576px) {
+
+    .candidate-dashboard-page {
+        padding:
+            22px 0 45px;
+    }
+
+
+    .candidate-dashboard-stats {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .candidate-stat-card {
+        min-height:
+            96px;
+
+        padding:
+            17px;
+    }
+
+
+    .candidate-welcome-section {
+        border-radius:
+            17px;
+
+        padding:
+            19px;
+    }
+
+
+    .candidate-welcome-section h1 {
+        font-size:
+            24px;
+    }
+
+
+    .candidate-welcome-section p {
+        font-size:
+            12px;
+    }
+
+
+    .dashboard-section-card {
+        padding:
+            18px;
+
+        border-radius:
+            16px;
+    }
+
+
+    .dashboard-section-header {
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+    }
+
+
+    .dashboard-career-card {
+        padding:
+            22px;
+
+        border-radius:
+            17px;
+    }
+
+
+    .dashboard-application-status {
+        margin-left:
+            0;
+    }
+}
+
+/* =========================================
+   HIRING CONFIRMED
+========================================= */
+
+.candidate-hire-confirmed-card {
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 17px;
+    margin-bottom: 25px;
+    padding: 21px 23px;
+    border: 1px solid #bbf7d0;
+    border-radius: 17px;
+    background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 62%, #f7fee7 100%);
+    box-shadow: 0 9px 28px rgba(22, 163, 74, 0.07);
+}
+
+.candidate-hire-confirmed-card::after {
+    content: "";
+    position: absolute;
+    top: -80px;
+    right: -60px;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: rgba(34, 197, 94, 0.06);
+    pointer-events: none;
+}
+
+.candidate-hire-confirmed-icon {
+    width: 56px;
+    height: 56px;
+    min-width: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    color: #ffffff;
+    font-size: 24px;
+    box-shadow: 0 8px 18px rgba(22, 163, 74, 0.2);
+}
+
+.candidate-hire-confirmed-main {
+    position: relative;
+    z-index: 1;
+    min-width: 0;
+}
+
+.candidate-hire-confirmed-main > span {
+    display: block;
+    color: #15803d;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+}
+
+.candidate-hire-confirmed-main h3 {
+    margin: 3px 0 0;
+    color: #14532d;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.candidate-hire-confirmed-main > p {
+    margin: 5px 0 0;
+    color: #64748b;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.candidate-hire-confirmed-main > p strong {
+    color: #166534;
+}
+
+.candidate-hire-confirmed-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-top: 13px;
+}
+
+.candidate-hire-confirmed-meta > div {
+    min-width: 125px;
+    padding: 8px 10px;
+    border: 1px solid #dcfce7;
+    border-radius: 9px;
+    background: rgba(255, 255, 255, 0.86);
+}
+
+.candidate-hire-confirmed-meta small {
+    display: block;
+    color: #86a28f;
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.candidate-hire-confirmed-meta strong {
+    display: block;
+    margin-top: 2px;
+    color: #166534;
+    font-size: 11px;
+    overflow-wrap: anywhere;
+}
+
+.candidate-hire-confirmed-action {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    min-height: 40px;
+    padding: 0 14px;
+    border: 1px solid #86efac;
+    border-radius: 10px;
+    background: #ffffff;
+    color: #15803d;
+    font-size: 11px;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.candidate-hire-confirmed-action:hover {
+    border-color: #4ade80;
+    background: #dcfce7;
+    color: #166534;
+}
+
+@media (max-width: 850px) {
+    .candidate-hire-confirmed-card {
+        grid-template-columns: auto minmax(0, 1fr);
+    }
+
+    .candidate-hire-confirmed-action {
+        grid-column: 1 / -1;
+        width: 100%;
+    }
+}
+
+@media (max-width: 560px) {
+    .candidate-hire-confirmed-card {
+        grid-template-columns: 1fr;
+        align-items: flex-start;
+        padding: 18px;
+    }
+
+    .candidate-hire-confirmed-meta {
+        flex-direction: column;
+    }
+
+    .candidate-hire-confirmed-meta > div {
+        width: 100%;
+    }
+}
+
+/* =========================================
+   ONBOARDING DASHBOARD INTEGRATION
+========================================= */
+
+.candidate-onboarding-status-value {
+    color: #0f766e !important;
+}
+
+.candidate-quick-action.candidate-onboarding-quick-action {
+    border-color: #cffafe;
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #f0fdfa
+        );
+}
+
+.candidate-quick-action.candidate-onboarding-quick-action:hover {
+    border-color: #a5f3fc;
+    background: #ecfeff;
+}
+/* =========================================================
+   CANDIDATE DASHBOARD - FONT SIZE IMPROVEMENT
+========================================================= */
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.candidate-dashboard-eyebrow {
+    font-size: 13px;
+}
+
+.candidate-welcome-section p {
+    font-size: 15px;
+}
+
+.dashboard-find-jobs-button {
+    font-size: 14px;
+}
+
+.dashboard-refresh-button {
+    font-size: 12px;
+}
+
+.candidate-dashboard-alert {
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.candidate-stat-card span {
+    font-size: 13px;
+}
+
+.candidate-stat-card strong {
+    font-size: 28px;
+}
+
+.candidate-stat-card small {
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   NEXT INTERVIEW
+========================================================= */
+
+.dashboard-next-interview-heading span {
+    font-size: 10px;
+}
+
+.dashboard-next-interview-heading h3 {
+    font-size: 19px;
+}
+
+.dashboard-next-interview-heading p {
+    font-size: 11px;
+}
+
+.dashboard-interview-round-badge {
+    font-size: 10px;
+}
+
+.dashboard-next-round small {
+    font-size: 9px;
+}
+
+.dashboard-next-round strong {
+    font-size: 15px;
+}
+
+.dashboard-next-interview-info small {
+    font-size: 9px;
+}
+
+.dashboard-next-interview-info strong {
+    font-size: 11px;
+}
+
+.dashboard-interview-secondary-button,
+.dashboard-interview-primary-button {
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   SECTION HEADERS
+========================================================= */
+
+.dashboard-section-header > div > span {
+    font-size: 12px;
+}
+
+.dashboard-section-header h4 {
+    font-size: 20px;
+}
+
+.dashboard-view-all {
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   PROFILE PROGRESS
+========================================================= */
+
+.profile-progress-footer > div {
+    font-size: 12px;
+}
+
+.profile-progress-footer a {
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   APPLICATION LIST
+========================================================= */
+
+.dashboard-application-info > span {
+    font-size: 11px;
+}
+
+.dashboard-application-info h5 {
+    font-size: 14px;
+}
+
+.dashboard-application-info small {
+    font-size: 11px;
+}
+
+.dashboard-application-status {
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   JOB CARDS
+========================================================= */
+
+.dashboard-open-badge {
+    font-size: 11px;
+}
+
+.dashboard-job-company {
+    font-size: 11px;
+}
+
+.dashboard-job-card h5 {
+    font-size: 15px;
+}
+
+.dashboard-job-meta span {
+    font-size: 11px;
+}
+
+.dashboard-job-button {
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   QUICK ACTIONS
+========================================================= */
+
+.candidate-quick-action strong {
+    font-size: 13px;
+}
+
+.candidate-quick-action span {
+    font-size: 11px;
+}
+
+.candidate-quick-action > i {
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   NOTIFICATIONS
+========================================================= */
+
+.dashboard-unread-badge {
+    font-size: 10px;
+}
+
+.dashboard-notification-content strong {
+    font-size: 12px;
+}
+
+.dashboard-notification-content p {
+    font-size: 11px;
+}
+
+.dashboard-notification-content small {
+    font-size: 10px;
+}
+
+.dashboard-notification-empty p {
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   CAREER CARD
+========================================================= */
+
+.dashboard-career-card > span {
+    font-size: 11px;
+}
+
+.dashboard-career-card h3 {
+    font-size: 22px;
+}
+
+.dashboard-career-card p {
+    font-size: 13px;
+}
+
+.career-progress-stats strong {
+    font-size: 22px;
+}
+
+.career-progress-stats span {
+    font-size: 10px;
+}
+
+.career-progress-extra span {
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   EMPTY STATES
+========================================================= */
+
+.dashboard-empty-state h5 {
+    font-size: 15px;
+}
+
+.dashboard-empty-state p {
+    font-size: 12px;
+}
+
+.dashboard-empty-button {
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .candidate-welcome-section p {
+        font-size: 14px;
+    }
+
+    .candidate-stat-card span {
+        font-size: 12px;
+    }
+
+    .dashboard-application-info h5 {
+        font-size: 13px;
+    }
+
+    .dashboard-job-card h5 {
+        font-size: 14px;
+    }
+
+    .candidate-quick-action strong {
+        font-size: 12px;
+    }
+
+    .candidate-quick-action span {
+        font-size: 10px;
+    }
+}
+
+
+@media (max-width: 576px) {
+
+    .candidate-welcome-section p {
+        font-size: 13px;
+    }
+
+    .dashboard-section-header h4 {
+        font-size: 18px;
+    }
+
+    .dashboard-career-card h3 {
+        font-size: 20px;
+    }
+
+    .dashboard-career-card p {
+        font-size: 12px;
+    }
+}

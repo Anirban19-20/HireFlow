@@ -1,0 +1,345 @@
+.hireflow-navbar {
+    min-height: 72px;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #e8edf5;
+
+    box-shadow:
+        0 3px 14px
+        rgba(15, 23, 42, 0.05);
+
+    z-index: 1000;
+}
+
+
+/* ======================================
+   BRAND
+====================================== */
+
+.hireflow-brand {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    font-size: 23px;
+
+    font-weight: 700;
+
+    color: #172554 !important;
+
+    text-decoration: none;
+}
+
+
+.hireflow-logo {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 11px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #1d4ed8
+        );
+
+    color: white;
+
+    font-size: 17px;
+
+    box-shadow:
+        0 5px 14px
+        rgba(37, 99, 235, 0.25);
+}
+
+
+/* ======================================
+   NAV LINKS
+====================================== */
+
+.hireflow-nav-link {
+    position: relative;
+
+    margin: 0 4px;
+
+    padding:
+        9px 11px !important;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    color: #64748b !important;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+
+.hireflow-nav-link:hover {
+    color: #2563eb !important;
+
+    background: #f1f5ff;
+}
+
+
+.hireflow-nav-link.active {
+    color: #2563eb !important;
+
+    background: #eff6ff;
+
+    font-weight: 600;
+}
+
+
+/* ======================================
+   USER
+====================================== */
+
+.navbar-user-area {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-left: auto;
+}
+
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #dbeafe,
+            #bfdbfe
+        );
+
+    color: #1d4ed8;
+
+    font-size: 16px;
+
+    font-weight: 700;
+}
+
+
+.user-info {
+    display: flex !important;
+    flex-direction: column;
+
+    margin-right: 5px;
+}
+
+
+.user-name {
+    max-width: 135px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    color: #334155;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    line-height: 1.3;
+}
+
+
+.user-role {
+    color: #94a3b8;
+
+    font-size: 10px;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* ======================================
+   ICON BUTTON
+====================================== */
+
+.navbar-icon-button {
+    width: 39px;
+    height: 39px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 9px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    color: #64748b;
+
+    text-decoration: none;
+
+    transition: all 0.2s ease;
+}
+
+
+.navbar-icon-button:hover {
+    background: #eff6ff;
+
+    border-color: #bfdbfe;
+
+    color: #2563eb;
+}
+
+
+/* ======================================
+   LOGOUT
+====================================== */
+
+.navbar-logout-button {
+    min-height: 39px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    padding: 0 13px;
+
+    background: #fff1f2;
+
+    color: #e11d48;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    transition: all 0.2s;
+}
+
+
+.navbar-logout-button:hover {
+    background: #ffe4e6;
+
+    color: #be123c;
+}
+
+
+/* ======================================
+   PUBLIC NAVBAR BUTTONS
+====================================== */
+
+.navbar-login-btn {
+    border: 1px solid #dbe3ee;
+
+    color: #334155;
+
+    padding: 8px 18px;
+
+    font-weight: 600;
+
+    border-radius: 9px;
+}
+
+
+.navbar-login-btn:hover {
+    background: #f8fafc;
+
+    border-color: #94a3b8;
+}
+
+
+.navbar-register-btn {
+    border: none;
+
+    background: #2563eb;
+
+    color: white;
+
+    padding: 8px 18px;
+
+    font-weight: 600;
+
+    border-radius: 9px;
+}
+
+
+.navbar-register-btn:hover {
+    background: #1d4ed8;
+
+    color: white;
+}
+
+
+/* ======================================
+   MOBILE
+====================================== */
+
+@media (max-width: 991px) {
+
+    .navbar-collapse {
+        padding-top: 20px;
+        padding-bottom: 10px;
+    }
+
+    .hireflow-nav-link {
+        margin-bottom: 5px;
+    }
+
+    .navbar-user-area {
+        margin-top: 15px;
+
+        padding-top: 15px;
+
+        border-top: 1px solid #edf2f7;
+
+        justify-content: flex-start;
+    }
+
+    .user-info {
+        display: flex !important;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .hireflow-navbar {
+        min-height: 65px;
+    }
+
+    .hireflow-brand {
+        font-size: 20px;
+    }
+
+    .hireflow-logo {
+        width: 36px;
+        height: 36px;
+    }
+
+    .user-info {
+        display: none !important;
+    }
+}
