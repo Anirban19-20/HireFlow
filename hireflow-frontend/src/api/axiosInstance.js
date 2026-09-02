@@ -7,9 +7,6 @@ const axiosInstance =
             "http://localhost:8080"
     });
 
-// =====================================================
-// REQUEST INTERCEPTOR
-// =====================================================
 
 axiosInstance.interceptors.request.use(
     (config) => {
@@ -36,9 +33,6 @@ axiosInstance.interceptors.request.use(
     }
 );
 
-// =====================================================
-// RESPONSE INTERCEPTOR
-// =====================================================
 
 axiosInstance.interceptors.response.use(
 

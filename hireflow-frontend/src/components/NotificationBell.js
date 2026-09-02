@@ -61,9 +61,6 @@ function NotificationBell() {
     ] = useState("");
 
 
-    // =====================================================
-    // LOAD UNREAD COUNT
-    // =====================================================
 
     const loadUnreadCount =
         async () => {
@@ -93,10 +90,6 @@ function NotificationBell() {
             }
         };
 
-
-    // =====================================================
-    // LOAD NOTIFICATIONS
-    // =====================================================
 
     const loadNotifications =
         async () => {
@@ -165,11 +158,6 @@ function NotificationBell() {
             }
         };
 
-
-    // =====================================================
-    // INITIAL LOAD
-    // =====================================================
-
     useEffect(
         () => {
 
@@ -207,10 +195,6 @@ function NotificationBell() {
         ]
     );
 
-
-    // =====================================================
-    // CLOSE WHEN CLICKING OUTSIDE
-    // =====================================================
 
     useEffect(
         () => {
@@ -252,10 +236,6 @@ function NotificationBell() {
     );
 
 
-    // =====================================================
-    // TOGGLE DROPDOWN
-    // =====================================================
-
     const handleToggle =
         async () => {
 
@@ -277,10 +257,6 @@ function NotificationBell() {
         };
 
 
-    // =====================================================
-    // NOTIFICATION DESTINATION
-    // =====================================================
-
     const getNotificationDestination =
         (
             notification
@@ -293,10 +269,6 @@ function NotificationBell() {
                 return null;
             }
 
-
-            // =================================================
-            // RECRUITER - APPLICATION ACTIVITY
-            // =================================================
 
             if (
                 user?.role === "RECRUITER" &&
@@ -323,10 +295,6 @@ function NotificationBell() {
             }
 
 
-            // =================================================
-            // RECRUITER - OFFER RESPONSE
-            // =================================================
-
             if (
                 user?.role === "RECRUITER" &&
                 (
@@ -352,10 +320,6 @@ function NotificationBell() {
             }
 
 
-            // =================================================
-            // CANDIDATE - APPLICATION STATUS
-            // =================================================
-
             if (
                 user?.role === "CANDIDATE" &&
                 notification.type ===
@@ -365,10 +329,6 @@ function NotificationBell() {
                 return "/candidate/applications";
             }
 
-
-            // =================================================
-            // CANDIDATE - INTERVIEW NOTIFICATIONS
-            // =================================================
 
             if (
                 user?.role === "CANDIDATE" &&
@@ -391,10 +351,6 @@ function NotificationBell() {
             }
 
 
-            // =================================================
-            // CANDIDATE - JOB OFFER NOTIFICATIONS
-            // =================================================
-
             if (
                 user?.role === "CANDIDATE" &&
                 (
@@ -409,10 +365,6 @@ function NotificationBell() {
                 return "/candidate/offers";
             }
 
-
-            // =================================================
-            // FALLBACKS
-            // =================================================
 
             if (
                 user?.role === "RECRUITER"
@@ -434,10 +386,6 @@ function NotificationBell() {
         };
 
 
-    // =====================================================
-    // CLICK NOTIFICATION
-    // =====================================================
-
     const handleNotificationClick =
         async (
             notification
@@ -453,9 +401,6 @@ function NotificationBell() {
 
             try {
 
-                // =============================================
-                // MARK AS READ
-                // =============================================
 
                 if (
                     !notification.read &&
@@ -502,10 +447,6 @@ function NotificationBell() {
                 }
 
 
-                // =============================================
-                // GET DESTINATION
-                // =============================================
-
                 const destination =
                     getNotificationDestination(
                         notification
@@ -544,11 +485,6 @@ function NotificationBell() {
                 );
             }
         };
-
-
-    // =====================================================
-    // MARK ALL AS READ
-    // =====================================================
 
     const markAllAsRead =
         async () => {
@@ -608,10 +544,6 @@ function NotificationBell() {
             }
         };
 
-
-    // =====================================================
-    // FORMAT DATE
-    // =====================================================
 
     const formatDate =
         (
@@ -718,18 +650,10 @@ function NotificationBell() {
         };
 
 
-    // =====================================================
-    // NOTIFICATION ICON
-    // =====================================================
-
     const getNotificationIcon =
         (
             notification
         ) => {
-
-            // =============================================
-            // NEW APPLICATION
-            // =============================================
 
             if (
                 notification?.type ===
@@ -739,11 +663,6 @@ function NotificationBell() {
                 return "bi bi-person-plus-fill";
             }
 
-
-            // =============================================
-            // APPLICATION WITHDRAWN
-            // =============================================
-
             if (
                 notification?.type ===
                     "APPLICATION_WITHDRAWN"
@@ -751,11 +670,6 @@ function NotificationBell() {
 
                 return "bi bi-person-dash-fill";
             }
-
-
-            // =============================================
-            // INTERVIEW SCHEDULED
-            // =============================================
 
             if (
                 notification?.type ===
@@ -765,11 +679,6 @@ function NotificationBell() {
                 return "bi bi-calendar-check-fill";
             }
 
-
-            // =============================================
-            // INTERVIEW RESCHEDULED
-            // =============================================
-
             if (
                 notification?.type ===
                     "INTERVIEW_RESCHEDULED"
@@ -777,11 +686,6 @@ function NotificationBell() {
 
                 return "bi bi-calendar-event-fill";
             }
-
-
-            // =============================================
-            // INTERVIEW CANCELLED
-            // =============================================
 
             if (
                 notification?.type ===
@@ -792,10 +696,6 @@ function NotificationBell() {
             }
 
 
-            // =============================================
-            // INTERVIEW COMPLETED
-            // =============================================
-
             if (
                 notification?.type ===
                     "INTERVIEW_COMPLETED"
@@ -804,10 +704,6 @@ function NotificationBell() {
                 return "bi bi-check-circle-fill";
             }
 
-
-            // =============================================
-            // OFFER SENT
-            // =============================================
 
             if (
                 notification?.type ===
@@ -818,9 +714,6 @@ function NotificationBell() {
             }
 
 
-            // =============================================
-            // OFFER ACCEPTED
-            // =============================================
 
             if (
                 notification?.type ===
@@ -829,11 +722,6 @@ function NotificationBell() {
 
                 return "bi bi-patch-check-fill";
             }
-
-
-            // =============================================
-            // OFFER REJECTED
-            // =============================================
 
             if (
                 notification?.type ===
@@ -844,10 +732,6 @@ function NotificationBell() {
             }
 
 
-            // =============================================
-            // OFFER WITHDRAWN
-            // =============================================
-
             if (
                 notification?.type ===
                     "OFFER_WITHDRAWN"
@@ -857,9 +741,6 @@ function NotificationBell() {
             }
 
 
-            // =============================================
-            // APPLICATION STATUS FALLBACK
-            // =============================================
 
             const title =
                 (
@@ -923,10 +804,6 @@ function NotificationBell() {
         };
 
 
-    // =====================================================
-    // NOTIFICATION TYPE LABEL
-    // =====================================================
-
     const getNotificationTypeLabel =
         (
             notification
@@ -965,11 +842,6 @@ function NotificationBell() {
             }
         };
 
-
-    // =====================================================
-    // FOOTER LABEL
-    // =====================================================
-
     const getFooterLabel =
         () => {
 
@@ -984,10 +856,6 @@ function NotificationBell() {
             return "View Applications";
         };
 
-
-    // =====================================================
-    // FOOTER CLICK
-    // =====================================================
 
     const handleFooterClick =
         () => {
@@ -1015,10 +883,6 @@ function NotificationBell() {
         };
 
 
-    // =====================================================
-    // ROLE CHECK
-    // =====================================================
-
     if (
         user?.role !== "CANDIDATE" &&
         user?.role !== "RECRUITER"
@@ -1028,10 +892,6 @@ function NotificationBell() {
     }
 
 
-    // =====================================================
-    // UI
-    // =====================================================
-
     return (
 
         <div
@@ -1040,10 +900,6 @@ function NotificationBell() {
                 dropdownRef
             }
         >
-
-            {/* =============================================
-                BELL
-            ============================================= */}
 
             <button
                 type="button"
@@ -1068,8 +924,6 @@ function NotificationBell() {
                 <i className="bi bi-bell"></i>
 
 
-                {/* UNREAD BADGE */}
-
                 {unreadCount > 0 && (
 
                     <span className="hireflow-notification-count">
@@ -1086,18 +940,10 @@ function NotificationBell() {
             </button>
 
 
-            {/* =============================================
-                DROPDOWN
-            ============================================= */}
-
             {open && (
 
                 <div className="hireflow-notification-dropdown">
 
-
-                    {/* =====================================
-                        HEADER
-                    ===================================== */}
 
                     <div className="hireflow-notification-header">
 
@@ -1125,9 +971,6 @@ function NotificationBell() {
 
                         </div>
 
-
-                        {/* MARK ALL */}
-
                         {unreadCount > 0 && (
 
                             <button
@@ -1146,15 +989,8 @@ function NotificationBell() {
 
                     </div>
 
-
-                    {/* =====================================
-                        BODY
-                    ===================================== */}
-
                     <div className="hireflow-notification-body">
 
-
-                        {/* LOADING */}
 
                         {loading && (
 
@@ -1171,8 +1007,6 @@ function NotificationBell() {
                         )}
 
 
-                        {/* ERROR */}
-
                         {!loading &&
                             error && (
 
@@ -1188,8 +1022,6 @@ function NotificationBell() {
 
                         )}
 
-
-                        {/* EMPTY */}
 
                         {!loading &&
                             !error &&
@@ -1227,10 +1059,6 @@ function NotificationBell() {
                         )}
 
 
-                        {/* =================================
-                            NOTIFICATION LIST
-                        ================================= */}
-
                         {!loading &&
                             !error &&
                             notifications
@@ -1266,8 +1094,6 @@ function NotificationBell() {
                                         }
                                     >
 
-                                        {/* ICON */}
-
                                         <div className="hireflow-notification-icon">
 
                                             <i
@@ -1280,8 +1106,6 @@ function NotificationBell() {
 
                                         </div>
 
-
-                                        {/* CONTENT */}
 
                                         <div className="hireflow-notification-content">
 
@@ -1345,10 +1169,6 @@ function NotificationBell() {
 
                     </div>
 
-
-                    {/* =====================================
-                        FOOTER
-                    ===================================== */}
 
                     {notifications.length >
                         0 && (

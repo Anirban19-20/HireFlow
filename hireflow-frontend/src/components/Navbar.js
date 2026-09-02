@@ -29,9 +29,6 @@ function Navbar() {
     } = useAuth();
 
 
-    // =====================================================
-    // HIDE NAVBAR ON AUTH PAGES
-    // =====================================================
 
     const hideNavbar =
         location.pathname === "/login" ||
@@ -42,11 +39,6 @@ function Navbar() {
 
         return null;
     }
-
-
-    // =====================================================
-    // LOGOUT
-    // =====================================================
 
     const handleLogout = () => {
 
@@ -61,10 +53,6 @@ function Navbar() {
     };
 
 
-    // =====================================================
-    // NOT LOGGED IN
-    // =====================================================
-
     if (!isAuthenticated) {
 
         return (
@@ -72,11 +60,6 @@ function Navbar() {
             <nav className="navbar navbar-expand-lg hireflow-navbar">
 
                 <div className="container">
-
-
-                    {/* =====================================
-                        BRAND
-                    ===================================== */}
 
                     <Link
                         className="navbar-brand hireflow-brand"
@@ -93,10 +76,6 @@ function Navbar() {
 
                     </Link>
 
-
-                    {/* =====================================
-                        AUTH BUTTONS
-                    ===================================== */}
 
                     <div className="ms-auto d-flex gap-2">
 
@@ -124,10 +103,6 @@ function Navbar() {
     }
 
 
-    // =====================================================
-    // AUTHENTICATED NAVBAR
-    // =====================================================
-
     return (
 
         <nav
@@ -142,9 +117,6 @@ function Navbar() {
             <div className="container-fluid px-lg-5">
 
 
-                {/* =========================================
-                    BRAND
-                ========================================= */}
 
                 <Link
                     className="navbar-brand hireflow-brand"
@@ -170,9 +142,6 @@ function Navbar() {
                 </Link>
 
 
-                {/* =========================================
-                    MOBILE TOGGLE
-                ========================================= */}
 
                 <button
                     className="navbar-toggler"
@@ -195,18 +164,11 @@ function Navbar() {
                 >
 
 
-                    {/* =========================================
-                        CANDIDATE LINKS
-                    ========================================= */}
-
                     {user?.role === "CANDIDATE" && (
 
                         <ul className="navbar-nav me-auto ms-lg-4">
 
 
-                            {/* =================================
-                                DASHBOARD
-                            ================================= */}
 
                             <li className="nav-item">
 
@@ -228,9 +190,6 @@ function Navbar() {
                             </li>
 
 
-                            {/* =================================
-                                FIND JOBS
-                            ================================= */}
 
                             <li className="nav-item">
 
@@ -252,10 +211,6 @@ function Navbar() {
                             </li>
 
 
-                            {/* =================================
-                                SAVED JOBS
-                            ================================= */}
-
                             <li className="nav-item">
 
                                 <NavLink
@@ -276,9 +231,6 @@ function Navbar() {
                             </li>
 
 
-                            {/* =================================
-                                APPLICATIONS
-                            ================================= */}
 
                             <li className="nav-item">
 
@@ -300,10 +252,6 @@ function Navbar() {
                             </li>
 
 
-                            {/* =================================
-                                INTERVIEWS
-                            ================================= */}
-
                             <li className="nav-item">
 
                                 <NavLink
@@ -324,10 +272,6 @@ function Navbar() {
                             </li>
 
 
-                            {/* =================================
-                                MY OFFERS
-                            ================================= */}
-
                             <li className="nav-item">
 
                                 <NavLink
@@ -347,10 +291,6 @@ function Navbar() {
 
                             </li>
 
-
-                            {/* =================================
-                                ONBOARDING
-                            ================================= */}
 
                             <li className="nav-item">
 
@@ -375,18 +315,10 @@ function Navbar() {
                     )}
 
 
-                    {/* =========================================
-                        RECRUITER LINKS
-                    ========================================= */}
-
                     {user?.role === "RECRUITER" && (
 
                         <ul className="navbar-nav me-auto ms-lg-4">
 
-
-                            {/* =================================
-                                DASHBOARD
-                            ================================= */}
 
                             <li className="nav-item">
 
@@ -408,10 +340,6 @@ function Navbar() {
                             </li>
 
 
-                            {/* =================================
-                                MY JOBS
-                            ================================= */}
-
                             <li className="nav-item">
 
                                 <NavLink
@@ -431,10 +359,6 @@ function Navbar() {
 
                             </li>
 
-
-                            {/* =================================
-                                INTERVIEWS
-                            ================================= */}
 
                             <li className="nav-item">
 
@@ -456,10 +380,6 @@ function Navbar() {
                             </li>
 
 
-                            {/* =================================
-                                ONBOARDING
-                            ================================= */}
-
                             <li className="nav-item">
 
                                 <NavLink
@@ -479,10 +399,6 @@ function Navbar() {
 
                             </li>
 
-
-                            {/* =================================
-                                POST JOB
-                            ================================= */}
 
                             <li className="nav-item">
 
@@ -506,10 +422,6 @@ function Navbar() {
                         </ul>
                     )}
 
-
-                    {/* =========================================
-                        ADMIN LINKS
-                    ========================================= */}
 
                     {user?.role === "ADMIN" && (
 
@@ -638,16 +550,8 @@ function Navbar() {
                     )}
 
 
-                    {/* =========================================
-                        USER AREA
-                    ========================================= */}
-
                     <div className="navbar-user-area">
 
-
-                        {/* =====================================
-                            NOTIFICATIONS
-                        ===================================== */}
 
                         {(
                             user?.role === "CANDIDATE" ||
@@ -658,10 +562,6 @@ function Navbar() {
 
                         )}
 
-
-                        {/* =====================================
-                            USER AVATAR
-                        ===================================== */}
 
                         <div className="user-avatar">
 
@@ -675,10 +575,6 @@ function Navbar() {
 
                         </div>
 
-
-                        {/* =====================================
-                            USER INFO
-                        ===================================== */}
 
                         <div className="user-info d-none d-lg-block">
 
@@ -697,10 +593,6 @@ function Navbar() {
                         </div>
 
 
-                        {/* =====================================
-                            CANDIDATE PROFILE
-                        ===================================== */}
-
                         {user?.role === "CANDIDATE" && (
 
                             <Link
@@ -716,10 +608,6 @@ function Navbar() {
                         )}
 
 
-                        {/* =====================================
-                            RECRUITER PROFILE
-                        ===================================== */}
-
                         {user?.role === "RECRUITER" && (
 
                             <Link
@@ -734,10 +622,6 @@ function Navbar() {
 
                         )}
 
-
-                        {/* =====================================
-                            LOGOUT
-                        ===================================== */}
 
                         <button
                             type="button"
