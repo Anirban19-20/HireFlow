@@ -1,13 +1,42 @@
 import axios from "axios";
 
+
+// =====================================================
+// API BASE URL
+// =====================================================
+
+const API_BASE_URL =
+    process.env.REACT_APP_API_URL?.trim() ||
+    (
+        window.location.hostname === "localhost"
+            ? "http://localhost:8080"
+            : "https://hireflow-backend-fvwp.onrender.com"
+    );
+
+
+// =====================================================
+// AXIOS INSTANCE
+// =====================================================
+
 const axiosInstance =
     axios.create({
+
         baseURL:
-            process.env.REACT_APP_API_BASE_URL
+            API_BASE_URL,
+
+        headers: {
+            "Content-Type":
+                "application/json"
+        }
     });
 
 
+// =====================================================
+// REQUEST INTERCEPTOR
+// =====================================================
+
 axiosInstance.interceptors.request.use(
+
     (config) => {
 
         const token =
@@ -32,6 +61,10 @@ axiosInstance.interceptors.request.use(
     }
 );
 
+
+// =====================================================
+// RESPONSE INTERCEPTOR
+// =====================================================
 
 axiosInstance.interceptors.response.use(
 
@@ -65,5 +98,6 @@ axiosInstance.interceptors.response.use(
         );
     }
 );
+
 
 export default axiosInstance;
