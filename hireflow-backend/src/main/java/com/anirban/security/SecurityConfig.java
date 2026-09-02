@@ -1,23 +1,33 @@
 package com.anirban.security;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import org.springframework.security.authentication.AuthenticationManager;
+
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
+
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
+
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+
 import org.springframework.security.config.http.SessionCreationPolicy;
+
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+
 import org.springframework.security.web.SecurityFilterChain;
+
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
+
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
-import java.util.List;
 
 @Configuration
 @EnableMethodSecurity
@@ -26,12 +36,32 @@ public class SecurityConfig {
     private final JwtAuthenticationFilter
             jwtAuthenticationFilter;
 
+
+    // =====================================================
+    // FRONTEND URL
+    // =====================================================
+
+    @Value(
+            "${app.frontend-url:http://localhost:3000}"
+    )
+    private String frontendUrl;
+
+
+    // =====================================================
+    // CONSTRUCTOR
+    // =====================================================
+
     public SecurityConfig(
             JwtAuthenticationFilter jwtAuthenticationFilter) {
 
         this.jwtAuthenticationFilter =
                 jwtAuthenticationFilter;
     }
+
+
+    // =====================================================
+    // SECURITY FILTER CHAIN
+    // =====================================================
 
     @Bean
     public SecurityFilterChain securityFilterChain(
@@ -80,7 +110,9 @@ public class SecurityConfig {
                 .authorizeHttpRequests(
                         auth -> auth
 
+                                // =================================
                                 // PUBLIC AUTH
+                                // =================================
 
                                 .requestMatchers(
                                         "/api/auth/**"
@@ -88,7 +120,9 @@ public class SecurityConfig {
                                 .permitAll()
 
 
+                                // =================================
                                 // PUBLIC JOB ENDPOINTS
+                                // =================================
 
                                 .requestMatchers(
                                         "/api/jobs/**"
@@ -96,7 +130,9 @@ public class SecurityConfig {
                                 .permitAll()
 
 
+                                // =================================
                                 // ADMIN ENDPOINTS
+                                // =================================
 
                                 .requestMatchers(
                                         "/api/admin/**"
@@ -106,7 +142,9 @@ public class SecurityConfig {
                                 )
 
 
+                                // =================================
                                 // CANDIDATE PROFILE
+                                // =================================
 
                                 .requestMatchers(
                                         "/api/candidates/**"
@@ -116,7 +154,9 @@ public class SecurityConfig {
                                 )
 
 
+                                // =================================
                                 // CANDIDATE ENDPOINTS
+                                // =================================
 
                                 .requestMatchers(
                                         "/api/candidate/**"
@@ -126,7 +166,9 @@ public class SecurityConfig {
                                 )
 
 
+                                // =================================
                                 // RECRUITER ENDPOINTS
+                                // =================================
 
                                 .requestMatchers(
                                         "/api/recruiter/**"
@@ -136,7 +178,9 @@ public class SecurityConfig {
                                 )
 
 
+                                // =================================
                                 // SHARED APPLICATION HISTORY
+                                // =================================
 
                                 .requestMatchers(
                                         "/api/applications/**"
@@ -147,7 +191,9 @@ public class SecurityConfig {
                                 )
 
 
+                                // =================================
                                 // NOTIFICATIONS
+                                // =================================
 
                                 .requestMatchers(
                                         "/api/notifications/**"
@@ -155,7 +201,9 @@ public class SecurityConfig {
                                 .authenticated()
 
 
+                                // =================================
                                 // EVERYTHING ELSE
+                                // =================================
 
                                 .anyRequest()
                                 .authenticated()
@@ -170,6 +218,7 @@ public class SecurityConfig {
                         jwtAuthenticationFilter,
                         UsernamePasswordAuthenticationFilter.class
                 );
+
 
         return http.build();
     }
@@ -205,16 +254,28 @@ public class SecurityConfig {
     // =====================================================
 
     @Bean
-    public CorsConfigurationSource corsConfigurationSource() {
+    public CorsConfigurationSource
+    corsConfigurationSource() {
 
         CorsConfiguration configuration =
                 new CorsConfiguration();
 
+
+        // =================================================
+        // ALLOWED FRONTENDS
+        // =================================================
+
         configuration.setAllowedOrigins(
                 List.of(
-                        "http://localhost:3000"
+                        "http://localhost:3000",
+                        frontendUrl
                 )
         );
+
+
+        // =================================================
+        // ALLOWED HTTP METHODS
+        // =================================================
 
         configuration.setAllowedMethods(
                 List.of(
@@ -227,6 +288,11 @@ public class SecurityConfig {
                 )
         );
 
+
+        // =================================================
+        // ALLOWED HEADERS
+        // =================================================
+
         configuration.setAllowedHeaders(
                 List.of(
                         "Authorization",
@@ -235,15 +301,30 @@ public class SecurityConfig {
                 )
         );
 
+
+        // =================================================
+        // EXPOSED HEADERS
+        // =================================================
+
         configuration.setExposedHeaders(
                 List.of(
                         "Authorization"
                 )
         );
 
+
+        // =================================================
+        // CREDENTIALS
+        // =================================================
+
         configuration.setAllowCredentials(
                 true
         );
+
+
+        // =================================================
+        // REGISTER CORS CONFIGURATION
+        // =================================================
 
         UrlBasedCorsConfigurationSource source =
                 new UrlBasedCorsConfigurationSource();
